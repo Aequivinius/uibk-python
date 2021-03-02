@@ -16,4 +16,5 @@
 * make slides
 * prepare git demonstration
 * find md-documentation
-* 
+* Is it even possible to write bad markdown?
+* can I add a badge?
