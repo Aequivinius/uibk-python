@@ -12,4 +12,5 @@ jobs:
     - name: "Let's get linnin"
       uses: docker://avtodev/markdown-lint:v1
       with:
+        config: '.markdownrc'
         args: "**/*.md"
