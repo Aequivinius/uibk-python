@@ -1,4 +1,4 @@
-### exercise-1 Introduction to `git` and `python`
+# exercise-1 Introduction to `git` and `python`
 
 * What is `git`? How to use it in general?
 * What is markdown?

@@ -1,0 +1,15 @@
+name: CC
+
+on: 
+  pull_request
+  
+jobs:
+  linting:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: "Let's get linnin"
+      uses: docker://avtodev/markdown-lint:v1
+      with:
+        args: "**/*.md"
