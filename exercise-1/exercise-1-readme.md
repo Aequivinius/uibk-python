@@ -6,12 +6,12 @@
 * What is `python`? What is *pythonic*?
 * Exercise: Create a `.md` file and make a `pull request`
 
-### What is `git`?
+## What is `git`?
 
 * `git` ist eine Versionierungs-Technologie, welche sich als Standart in der Software-Entwicklung etabliert hat. Damit Sie diese Technologie kennenlernen, werden wir Sie für den Übungsbetrieb einsetzen.
 * Kernbegriffe sind `commit` und das Repository.
 
-### To Do
+## To Do
 
 * make slides
 * prepare git demonstration
