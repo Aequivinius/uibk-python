@@ -18,12 +18,11 @@
 
 ![series of snapshots](img/snapshots.png)
 
-
-
 * `git` macht Ihnen die Zusammenarbeit innerhalb einer Organisation einfach, in dem Sie Ihr repository zentral speichern, und jeder eine lokale Kopie des repositorys hat, welches sie oder er mittels `push` und `pull` aktualisieren kann. Gibt es Konflikte, versucht `git` diese selber zu lösen, und fragt Sie sonst explizit um Hilfe.
 * `git` macht aber auch die Zusammenarbeit über Organisationsgrenzen hinweg einfach mittels `fork` und `pull request`. Dies werden wir in der Übung benutzen.
 * `git` ist in diesem Sinne ein Konzept, mit Daten umzugehen, und ein Programm, das Ihnen dabei Hilft. Es gibt Ihnen aber keinen Speicher, und keine Werkzeuge, um Ihre Daten zu verändern. Es gibt aber Plattformen, welche dies mittels `git` tun, die bekannteste davon ist github.com. Dort können Sie mittels `git` Ihre Daten speichern, und verteilt an Ihrem Projekt arbeiten.
 * github.com wartet mit zahlreichen Zusatzdiensten auf, die die Arbeit deutlich erleichtern, mitunter einem Browser-Editor und rendering von  `.md`-Datein.
+* Eine weitere, häuftig genutzte Funktion von github.com sind *issues*, mit welchen *feature requests* und *bug reports* abgebildet werden können. Wir werden diese verwenden, um Fragen zu den Übungen zu stellen. Stellen Sie sicher, dass Sie ein issue auf `Aequivinius/uibk-python` aufmachen, und nicht auf Ihrem eigenen repository.
 
 ## `.md`
 

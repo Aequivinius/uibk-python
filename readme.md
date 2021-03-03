@@ -6,7 +6,7 @@ Der Kurs wird in 13 Übungen geführt, welche auf auf [github.com](https://githu
 
 Die Übungen werden über `pull requests` abgegeben, und automatisch mittels der bereitgestellten Testfälle bewertet. Besteht eine abgegebene Übung die Testfälle, gilt sie als erfolgreich: Für die Bestnote müssen Sie 10 erfolgreiche Übungen abgegeben haben.
 
-* exercise-1 Introduction to `git` 
+* exercise-1 Introduction to `git`
 * exercise-2 Introduction and installation of `python`
   * History
   * What does *pythonic* mean?
@@ -37,6 +37,6 @@ Die Übungen werden über `pull requests` abgegeben, und automatisch mittels der
   * normalisation
   * spaCy
 * exercise-12 NLP project II
-	* word frequencies
+  * word frequencies
 * exercise-13 NLP project III
-	* own miniature project
+  * own miniature project
