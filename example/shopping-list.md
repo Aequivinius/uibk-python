@@ -2,3 +2,4 @@
 
 * lobster tails
 * rice
+* saffron
