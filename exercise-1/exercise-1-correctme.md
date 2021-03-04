@@ -2,11 +2,11 @@
 
 `markdownlint` is a [Node.js](https://nodejs.org/) style checker and lint tool for [Markdown](https://en.wikipedia.org/wiki/Markdown)/[CommonMark](https://commonmark.org/) files to automatically validate content, prevent rendering problems, and promote consistency.
 
-## Instructions
+## Instructions 1
 
 This `document` contains all sorts of violations of the above [CommonMark](https://commonmark.org/) specification.
 
-## Instructions
+## Instructions 2
 
 Compare the **specification** with this **document**, and fix the style errors.
 
@@ -18,7 +18,7 @@ Compare the **specification** with this **document**, and fix the style errors.
 
 * [`Markdown specification`](https://daringfireball.net/projects/markdown/)
 
-*	[`CommonMark specification`](https://commonmark.org/)
+*	[`Commonmark specification`](https://commonmark.org/)
 
 Thanks
 
