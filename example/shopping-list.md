@@ -3,4 +3,5 @@
 * lobster tails
 * rice
 * saffron
-* borth
+* broth
+* celery
