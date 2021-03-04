@@ -21,5 +21,5 @@ Compare the **specification** with this **document**, and fix the style errors.
 Thanks  
 ---
 
-1. https://github.com/markdownlint/markdownlint for the inspiration
+1. [`markdownlit`](https://github.com/markdownlint/markdownlint) for the inspiration
 2. [`markdownlit`](https://github.com/markdown-it/markdown-it) for the parser and interactive demo idea!
