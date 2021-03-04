@@ -12,10 +12,10 @@ Compare the **specification** with this **document**, and fix the style errors.
 
 ## Resources
 
-* [`markdownlint`_on_GitHub](https://github.com/DavidAnson/markdownlint)
-* [ `markdownlint`_on_npm ](https://www.npmjs.com/package/markdownlint)
-* [Markdown_specification](https://daringfireball.net/projects/markdown/)
-* [CommonMark_specification](https://commonmark.org/)
+* [`markdownlint` on GitHub](https://github.com/DavidAnson/markdownlint)
+* [`markdownlint` on npm](https://www.npmjs.com/package/markdownlint)
+* [Markdown specification](https://daringfireball.net/projects/markdown/)
+* [CommonMark specification](https://commonmark.org/)
 
 ## Thanks
 
