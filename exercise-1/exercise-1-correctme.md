@@ -22,4 +22,4 @@ Thanks
 ---
 
 1. https://github.com/markdownlint/markdownlint for the inspiration
-2. [`markdown-it`](https://github.com/markdown-it/markdown-it) for the parser and interactive demo idea!
+2. [`markdownlit`](https://github.com/markdown-it/markdown-it) for the parser and interactive demo idea!
