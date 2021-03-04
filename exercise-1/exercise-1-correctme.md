@@ -6,7 +6,8 @@
 
 This `document` contains all sorts of violations of the above [CommonMark](https://commonmark.org/) specification.
 
-## Instructions 2
+### Instructions 2
+
 Compare the **specification** with this **document**, and fix the style errors.
 
 ## Resources
@@ -17,7 +18,7 @@ Compare the **specification** with this **document**, and fix the style errors.
 
 * [`Markdown specification`](https://daringfireball.net/projects/markdown/)
 
-*	[`Commonmark specification`](https://commonmark.org/)
+* [`Commonmark specification`](https://commonmark.org/)
 
 Thanks
 
