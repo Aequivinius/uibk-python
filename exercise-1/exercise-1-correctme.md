@@ -19,7 +19,7 @@ Compare the **specification** with this **document**, and fix the style errors.
 *	[CommonMark specification](https://commonmark.org/)
 
 Thanks
---------
+---
 
 1. https://github.com/markdownlint/markdownlint for the inspiration
 1. [`markdown-it`](https://github.com/markdown-it/markdown-it) for the parser and interactive demo idea!
