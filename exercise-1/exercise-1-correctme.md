@@ -16,14 +16,14 @@ Compare the **specification** with this **document**, and fix the style errors.
 
 * [`markdownlint` on npm](https://www.npmjs.com/package/markdownlint)
 
-* [Markdown specification](https://daringfireball.net/projects/markdown/)
+* [`Markdown specification`](https://daringfireball.net/projects/markdown/)
 
-*	[CommonMark specification](https://commonmark.org/)
+*	[`CommonMark specification`](https://commonmark.org/)
 
 Thanks
 
 ------
 
 1. [Github Markdownlint](https://github.com/markdownlint/markdownlint) for the inspiration
- 
+
 2. [`markdown-it`](https://github.com/markdown-it/markdown-it) for the parser and interactive demo idea!
