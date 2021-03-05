@@ -23,4 +23,3 @@ Compare the **specification** with this **document**, and fix the style errors.
 
 1. [`markdownlint`](https://github.com/markdownlint/markdownlint) for the inspiration
 2. [`markdown-it`](https://github.com/markdown-it/markdown-it) for the parser and interactive demo idea!
-
