@@ -8,14 +8,14 @@ This `document` contains all sorts of violations of the above [CommonMark](https
 
 ## Instructions
 
-Compare the **specification** with this **document**, and fix the style errors. 
+Compare the **specification** with this **document**, and fix the style errors.
 
-# Resources
+## Resources
 
 * [`markdownlint` on GitHub](https://github.com/DavidAnson/markdownlint)
 * [`markdownlint` on npm](https://www.npmjs.com/package/markdownlint)
 * [Markdown specification](https://daringfireball.net/projects/markdown/)
-*	[CommonMark specification](https://commonmark.org/)
+* [CommonMark specification](https://commonmark.org/)
 
 ## Thanks
 
