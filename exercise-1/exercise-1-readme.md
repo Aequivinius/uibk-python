@@ -27,7 +27,7 @@
 ## `.md`
 
 * `.md` steht für Markdown, und ist ein kleines Set von sowohl maschinen- wie auch menschenlesbaren Zeichenketten, mit denen Sie angeben können, wie Sie Ihren Text dargestellt haben möchten.
-* Es erfreut sich, auch dank github.com, aber vorallem aufgrund seiner Einfachheit, großer Beliebtheit bei Software-Projekten für die Dokumentation. 
+* Es erfreut sich, auch dank github.com, aber vorallem aufgrund seiner Einfachheit, großer Beliebtheit bei Software-Projekten für die Dokumentation.
 * Wenn Sie die [Basic Syntax](https://commonmark.org/help/) können, sind Sie bereits dabei.
 
 ## exercise-1
