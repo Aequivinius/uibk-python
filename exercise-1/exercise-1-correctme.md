@@ -18,6 +18,7 @@ Compare the **specification** with this **document**, and fix the style errors.
 *	[`CommonMark specification`](https://commonmark.org)
 
 ## Thanks
+
 --------
 
 1. [`Github Markdownlint`](https://github.com/markdownlint/markdownlint) for the inspiration
