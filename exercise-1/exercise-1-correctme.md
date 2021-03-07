@@ -17,6 +17,7 @@ Compare the **specification** with this **document**, and fix the style errors.
 * [`Markdown specification`](https://daringfireball.net/projects/markdown)
 *	[`CommonMark specification`](https://commonmark.org)
 
+
 ## Thanks
 
 --------
