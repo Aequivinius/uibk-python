@@ -1,24 +1,24 @@
-# Introduction
+# Introduction 
 
-[markdownlint](https://github.com/markdownlint/markdownlint) is a [Node.js](https://nodejs.org/) style checker and lint tool for [Markdown](https://en.wikipedia.org/wiki/Markdown)/[CommonMark](https://commonmark.org/) files to automatically validate content, prevent rendering problems, and promote consistency.
+[markdownlint](https://github.com/markdownlint/markdownlint) is a [Node.js](https://nodejs.org/) style checker and lint tool for [Markdown](https://en.wikipedia.org/wiki/Markdown)/[CommonMark](https://commonmark.org/) files to automatically validate content, prevent rendering problems, and promote consistency. 
 
-## Instructions
+## Instructions 
 
-This **document** contains all sorts of violations of the above [CommonMark](https://commonmark.org/) specification.
+This **document** contains all sorts of violations of the above [CommonMark](https://commonmark.org/) specification. 
 
 Compare the **specification** with this **document**, and fix the style errors. 
 
-# Resources
+# Resources 
 
-* [`markdownlint`](https://github.com/DavidAnson/markdownlint) on GitHub
+* [`markdownlint`](https://github.com/DavidAnson/markdownlint) on GitHub 
 
-* [`markdownlint`](https://www.npmjs.com/package/markdownlint) on npm
+* [`markdownlint`](https://www.npmjs.com/package/markdownlint) on npm 
 
-* [`Markdown specification`](https://daringfireball.net/projects/markdown/)
+* [`Markdown specification`](https://daringfireball.net/projects/markdown/) 
 
-* [`CommonMark specification`](https://commonmark.org/)
+* [`CommonMark specification`](https://commonmark.org/) 
 
-# Thanks
+# Thanks 
 
-1. [`markdownlint`](https://github.com/markdownlint/markdownlint) for the inspiration!
-2. [`markdown-it`](https://github.com/markdown-it/markdown-it) for the parser and interactive demo idea!
+1. [`markdownlint`](https://github.com/markdownlint/markdownlint) for the inspiration! 
+2. [`markdown-it`](https://github.com/markdown-it/markdown-it) for the parser and interactive demo idea! 
