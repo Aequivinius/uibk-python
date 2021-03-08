@@ -9,8 +9,8 @@ This **document** contains all sorts of violations of the above [CommonMark](htt
 Compare the **specification** with this **document**, and fix the style errors. 
 
 ## Resources
-* [`markdownlint`]on GitHub(https://github.com/DavidAnson/markdownlint)
-* [`markdownlint`]on npm(https://www.npmjs.com/package/markdownlint)
+* [`markdownlint`](https://github.com/DavidAnson/markdownlint) on GitHub
+* [`markdownlint`](https://www.npmjs.com/package/markdownlint) on npm
 * [`Markdown specification`](https://daringfireball.net/projects/markdown/)
 * [`CommonMark specification`](https://commonmark.org/)
 
