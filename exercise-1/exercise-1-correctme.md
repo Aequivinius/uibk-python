@@ -1,8 +1,8 @@
-## Introduction
+# Introduction
 
 [markdownlint](https://github.com/markdownlint/markdownlint) is a [Node.js](https://nodejs.org/) style checker and lint tool for [Markdown](https://en.wikipedia.org/wiki/Markdown)/[CommonMark](https://commonmark.org/) files to automatically validate content, prevent rendering problems, and promote consistency.
 
-#### Instructions
+### Instructions
 
 This **document** contains all sorts of violations of the above [CommonMark](https://commonmark.org/) specification.
 
@@ -10,9 +10,9 @@ Compare the **specification** with this **document**, and fix the style errors.
 
 ## Resources
 
-* [`markdownlint`](https://github.com/DavidAnson/markdownlint) on GitHub
+* [`markdownlint`](https://github.com/DavidAnson/markdownlint)on GitHub
 
-* [`markdownlint`](https://www.npmjs.com/package/markdownlint) on npm
+* [`markdownlint`](https://www.npmjs.com/package/markdownlint)on npm
 
 * [`Markdown specification`](https://daringfireball.net/projects/markdown/)
 
