@@ -27,12 +27,12 @@
 ## `.md`
 
 * `.md` steht für Markdown, und ist ein kleines Set von sowohl maschinen- wie auch menschenlesbaren Zeichenketten, mit denen Sie angeben können, wie Sie Ihren Text dargestellt haben möchten.
-* Es erfreut sich, auch dank github.com, aber vorallem aufgrund seiner Einfachheit, großer Beliebtheit bei Software-Projekten für die Dokumentation. 
+* Es erfreut sich, auch dank github.com, aber vorallem aufgrund seiner Einfachheit, großer Beliebtheit bei Software-Projekten für die Dokumentation.
 * Wenn Sie die [Basic Syntax](https://commonmark.org/help/) können, sind Sie bereits dabei.
 
 ## exercise-1
 
-1. Create an account on [github.com](https://github.com/) if you don't have one already. You can use your personal, your university or a [burner](https://temp-mail.org/en/) email. 
+1. Create an account on [github.com](https://github.com/) if you don't have one already. You can use your personal, your university or a [burner](https://temp-mail.org/en/) email.
 2. Find the [course repository](https://github.com/Aequivinius/uibk-python), and `fork` it. It might also make sense to `watch` it, if you want to receive notification if something changes. However, this is not strictly necessary, since the individual exercises will not change while you work on them.
 3. In your forked repository, which should be under `yourname/uibk-python`, locate the file `exercise-1/exercise-1-correctme.md` and edit it in the browser. There are some `.md` errors in this file, try to find them and save your changes in a first `commit`.
 4. Now, suggest your changes be added to the course repository by creating a `pull request`. This will trigger an action, in this case, a `.md` linter. Most likely, your first `pull request` will fail the linting, because the linter is quite strict. In this case, cancel the `pull request`. Check out the error messages, and fix the errors, `commit` and create a new `pull request` until you get a green checkmark.
