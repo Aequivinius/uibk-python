@@ -6,7 +6,7 @@
 
 ## Instructions
 
-This **document** contains all sorts of violations of the above [CommonMark](https://commonmark.org/) specification.
+This **document** contains all sorts of violations of the above [CommonMark](https://commonmark.org/) specification.  
 Compare the **specification** with this **document**, and fix the style errors.
 
 ## Resources
