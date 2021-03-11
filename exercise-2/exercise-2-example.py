@@ -9,7 +9,7 @@
 
 print("Hello World")
 print("-----------")
-
+print('Hallo Welt!')
 # Feel free to change replace "Hello World" with something else.
 
 # Let's begin with VARIABLES: think of variables in python as a bucket which
@@ -105,9 +105,8 @@ print(result)
 test_value = 29
 if test_value > 31:
 	print("It's not brobdingnagian")
-if test_value < 31:
+else test_value < 31:
 	print("It's elephantine")
-if test_value == 29:
+elif test_value == 29:
 	print("It's gargantuan")
-
 
