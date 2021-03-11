@@ -38,7 +38,7 @@ print(bucket)
 # directly. If we want to actually use text, we surround it by "". This is then
 # called a string, and we can use it in variables just like numbers.
 
-bucket = "bucket"
+bucket = "Eimer"
 print(bucket)
 print("-----------")
 
