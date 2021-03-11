@@ -24,8 +24,7 @@
 
 ## replit.com
 
-* github.com repositories are represented as *repls* in replit.com. This is the equivalent of having a local copy of your repository on your machine, only that in replit.com's case, your code now is copied to their server.
-* When copying the repository, make sure you set `python` as your project type.
+* github.com repositories are represented as *repls* in replit.com. This is the equivalent of having a local copy of your repository on your machine, only that in replit.com's case, your code now is copied to their server. In your account settings, connect your replit.com account with your github.com account.
 * To run a file, type `python filename.py` into the console. For example, for seeing the outputs of your exercise, type `python exercise-2/fizzbuzz.py` and for seeing the output of the example code, type `python exercise-2/exercise-2-example.py`
 
 
@@ -43,10 +42,4 @@
 2. Create an account at [replit.com](Replit.com), and checkout *your* forked repository. Make sure you select `python` as your language in your `.replit` configuration file, if necessary. 
 3. Inspect the file `exercise-2/exercise-2-example.py` to understand the following basic `python` concepts: comments, variables, assignments, functions, return values, parameters, `if` and `print` statements.
 4. Change the file `exercise-2/fizzbuzz.py` so that the function `fizzbuzz(number)` behaves as described in the comments.
-5. `commit` your changed files to your repository, and create a `pull request` from your repository to the course repository.
-
-
-
-## To Do
-
-* add .replit
+5. `commit` and `push` your changed files from replit.com to your repository, and create a `pull request` from your repository to the course repository.
