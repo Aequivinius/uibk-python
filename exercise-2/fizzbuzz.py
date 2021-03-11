@@ -3,7 +3,7 @@ def compute_remainder(number, divisor):
 	return number % divisor
 
 def fizzbuzz(number):
-	if compute_remainder(number, 15) == 0:
+	if compute_remainder(number, 16) == 0:
 		return "fizzbuzz"
 	elif compute_remainder(number, 3) == 0:
 		return "fizz"
