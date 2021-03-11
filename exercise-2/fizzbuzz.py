@@ -10,7 +10,7 @@ def compute_remainder(number, divisor):
 def fizzbuzz(number):
 	# your code goes here
 	# don't forget to replace the return statement below as appropriate
-	return number
+	return "fizz"
 
 # this part below prints the result of the fizzbuzz function for the first 45
 # numbers

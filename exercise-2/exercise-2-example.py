@@ -108,6 +108,4 @@ if test_value > 31:
 if test_value < 31:
 	print("It's elephantine")
 if test_value == 29:
-	print("It's gargantuan")
-
-
+	print("It's gargantuanissimo")
