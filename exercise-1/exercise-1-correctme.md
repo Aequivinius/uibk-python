@@ -3,7 +3,7 @@
 `markdownlint` is a [Node.js](https://nodejs.org/) style checker and lint tool for [Markdown](https://en.wikipedia.org/wiki/Markdown)/[CommonMark](https://commonmark.org/) files to automatically validate content, prevent rendering problems, and promote consistency.
 
 
- #### Instructions
+#### Instructions
 
 This `document` contains all sorts of violations of the above (CommonMark)[https://commonmark.org/] specification.
 
