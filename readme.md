@@ -1,17 +1,15 @@
 # Python for Linguists
 
-Die Studierenden werden in Python eingeführt, und die nötigen Aspekte zur automatischen Verarbeitung natürlichsprachlicher Texte erklärt. Vorkenntnisse im Programmieren sind erwünscht, aber nicht zwingend.
+Students are introduced to python, and the different techniques to process natural language texts automatically are explained. Experience in programming is desirable, but not necessary. Since the course is open to students without prior programming experience, sessions 2-4 are very general and not specific to natural language text processing.
 
-Der Kurs wird in 13 Übungen geführt, welche auf auf [github.com](https://github.com/Aequivinius/uibk-python) zu finden sind. In der ersten Sitzung wird der Umgang mit `git` grundsätzlich und im Bezug auf die Übungen erklärt; daraufhin ist jede Sitzung einem Thema gewidmet. Da dieser Kurs Studierenden sowohl mit Vorkenntnissen als auch ohne offensteht, werden die Sitzungen 2-4 Grundlagen erklären, die nicht spezifisch für die Arbeit mit natürlichsprachlichen Texten sind.
+There will be 13 exercises, which can be found on  [the course repository on github.com](https://github.com/Aequivinius/uibk-python). The first session is dedicated to the explanation of `git` in general and how we are using it in the course: All the exercises are handed in via `pull requests` and will be tested automatically. If a submission passes the tests, it is considered a success; and for the maximum grade students need to submit 10 successful exercises.
 
-Die Übungen werden über `pull requests` abgegeben, und automatisch mittels der bereitgestellten Testfälle bewertet. Besteht eine abgegebene Übung die Testfälle, gilt sie als erfolgreich: Für die Bestnote müssen Sie 10 erfolgreiche Übungen abgegeben haben.
+Since we are using `pytest` to automatically evaluate your submissions, avoid naming any of your files beginning with `test_` or ending with `_test`.
+
+## Table of Contents
 
 * exercise-1 Introduction to `git`
 * exercise-2 Introduction and installation of `python`
-  * History
-  * What does *pythonic* mean?
-  * Versions of python
-  * Setting up your IDE
 * exercise-3 strings
   * Variables and types
   * Concatination, interpolation, search
@@ -40,3 +38,12 @@ Die Übungen werden über `pull requests` abgegeben, und automatisch mittels der
   * word frequencies
 * exercise-13 NLP project III
   * own miniature project
+
+## Where can I get help?
+
+🙋 Students ask questions in the form of *issues* in the main repository, so that everyone can benefit. Also, make sure you check the error logs of the automated tests as shown in the screenshots below.
+
+![error-log-1](img/error-log-1.png)
+
+![error-log-2](img/error-log-2.png)
+
