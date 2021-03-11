@@ -1,21 +1,18 @@
-
-def is_divisible(number, divisor):
-	if number % divisor == 0:
-		return True
-	else:
-		return False
+# 
+def compute_remainder(number, divisor):
+	return number % divisor
 
 def fizzbuzz(number):
-	if is_divisible(number, 15):
+	if compute_remainder(number, 15) == 0:
 		return "fizzbuzz"
-	elif is_divisible(number, 3):
+	elif compute_remainder(number, 3) == 0:
 		return "fizz"
-	elif is_divisible(number, 5):
+	elif compute_remainder(number, 5) == 0:
 		return "buzz"
 	else:
 		return number
 
-if __name__ == "__main__":
-	for number in range(0,46):
-		print(fizzbuzz(number))
+for number in range(0,46):
+	print(fizzbuzz(number))
+
 
