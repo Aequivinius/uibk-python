@@ -5,4 +5,4 @@ def test_fizzbuzz():
   assert fizzbuzz.fizzbuzz(5) == "buzz"
   assert fizzbuzz.fizzbuzz(15) == "fizzbuzz"
   assert fizzbuzz.fizzbuzz(48) == "fizz"
-  assert fizzbuzz.fizzbuzz(2) == 2
+  assert fizzbuzz.fizzbuzz(225) == "fizzbuzz"

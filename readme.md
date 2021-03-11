@@ -43,7 +43,7 @@ Since we are using `pytest` to automatically evaluate your submissions, avoid na
 
 🙋 Students ask questions in the form of *issues* in the main repository, so that everyone can benefit. Also, make sure you check the error logs of the automated tests as shown in the screenshots below.
 
-![error-log-1](/Users/Qua/uibk-python/img/error-log-1.png)
+![error-log-1](img/error-log-1.png)
 
-![error-log-2](/Users/Qua/uibk-python/img/error-log-2.png)
+![error-log-2](img/error-log-2.png)
 
