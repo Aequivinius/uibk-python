@@ -26,3 +26,4 @@ def fizzbuzz(number):
 for number in range(0,46):
 	print(str(number) + " : " + str(fizzbuzz(number)))
 	print(str(number) + " : " + str(fizzbuzz(number))) 
+  
