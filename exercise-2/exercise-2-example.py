@@ -25,6 +25,8 @@ a = 5
 print(a)
 a = 9
 print(a)
+fabi = 2706
+print(fabi)
 
 # We are free to use whatever names we want for our variables as long as it
 # doesn't contain spaces. Feel free to change the variable name in the example
@@ -38,7 +40,7 @@ print(bucket)
 # directly. If we want to actually use text, we surround it by "". This is then
 # called a string, and we can use it in variables just like numbers.
 
-bucket = "bucket"
+bucket = "a"
 print(bucket)
 print("-----------")
 
@@ -70,7 +72,6 @@ print("Let's look at parameters:")
 def function_with_parameters(parameter, another_parameter):
 	print(parameter)
 	print(another_parameter)
-
 # If you then call the parametrised function, you can give it values that the
 # statements it contains can use under the name you gave the parameters when
 # declaring the function.
