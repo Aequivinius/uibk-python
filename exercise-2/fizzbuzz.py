@@ -7,12 +7,12 @@
 def compute_remainder(number, divisor):
 	return number % divisor
 
-def fizzbuzz(number):
-	# your code goes here
-	# don't forget to replace the return statement below as appropriate
-	return number
-
-# this part below prints the result of the fizzbuzz function for the first 45
-# numbers
 for number in range(0,46):
-	print(str(number) + " : " + str(fizzbuzz(number)))
+ if number % 3 == 0 and number % 5 == 0:
+   print("fizzbuzz")
+ elif number % 5 == 0:
+    print("fizz")
+ elif number % 3 == 0:
+    print("buzz")
+ else:
+   print(number)
