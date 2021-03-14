@@ -10,13 +10,11 @@ Since we are using `pytest` to automatically evaluate your submissions, avoid na
 
 * exercise-1 Introduction to `git`
 * exercise-2 Introduction and installation of `python`
-* exercise-3 strings
-  * Variables and types
+* exercise-3 Data types:`string` and `list`
   * Concatination, interpolation, search
-  * regex
-* exercise-4 lists, dictionaries, comprehensions
-  * Loops
   * `in` operator etc.
+* exercise-4 More data types: `dict`, comprehensions
+  * `regex`
 * exercise-5 files
   * reading and writing files
   * `.csv`
