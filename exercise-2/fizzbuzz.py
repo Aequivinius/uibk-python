@@ -7,13 +7,16 @@
 def compute_remainder(number, divisor):
 	return number % divisor
 
-for number in range(0,46):
- if number % 3 == 0 and number % 5 == 0:
-   print("fizzbuzz")
- elif number % 5 == 0:
-    print("fizz")
- elif number % 3 == 0:
-    print("buzz")
+def fizzbuzz(number):
+ if compute_remainder(number, 3) == 0 and compute_remainder(number, 5) == 0:
+   fizzbuzz_number = 'fizzbuzz'
+ elif compute_remainder(number, 3) == 0:
+   fizzbuzz_number = 'buzz'
+ elif compute_remainder(number, 5) == 0:
+   fizzbuzz_number = 'fizz'
  else:
-   print(number)
-   
+   fizzbuzz_number = number
+ return fizzbuzz_number
+
+for number in range(0, 46):
+   print(str(number) + " : " + str(fizzbuzz(number)))
