@@ -11,9 +11,9 @@ def fizzbuzz(number):
  if compute_remainder(number, 3) == 0 and compute_remainder(number, 5) == 0:
    fizzbuzz_number = 'fizzbuzz'
  elif compute_remainder(number, 3) == 0:
-   fizzbuzz_number = 'buzz'
- elif compute_remainder(number, 5) == 0:
    fizzbuzz_number = 'fizz'
+ elif compute_remainder(number, 5) == 0:
+   fizzbuzz_number = 'buzz'
  else:
    fizzbuzz_number = number
  return fizzbuzz_number
