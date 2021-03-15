@@ -9,12 +9,12 @@
 # whitespace. For this, it might make sense to
 # glue the tokenized list back together directly
 
-def tokenize(string):
+def tokenize(input_string):
 	# Change this to return a list
-	return string
+	return input_string
 
-def is_palindrome(string):
-	tokens = tokenize(string)
+def is_palindrome(input_string):
+	tokens = tokenize(input_string)
 	
 	# Change this to return True if the string
 	# is indeed a palindrom and False otherwise

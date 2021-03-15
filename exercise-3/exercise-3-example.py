@@ -6,7 +6,10 @@
 # demonstration of indexes, a number string
 
 short_string = "Alle meine Entchen"
-long_string = open('howl.txt').read()
+
+import os
+this_file = os.path.dirname(os.path.abspath(__file__))
+long_string = open(os.path.join(this_file, 'howl.txt')).read()
 number_string = "123456789"
 
 # First, the length of a string:
