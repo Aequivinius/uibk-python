@@ -4,6 +4,7 @@
 # if it is divisible by 3 and 5. You can use the predefined
 # computer_remainder() function.
 
+
 def compute_remainder(number, divisor):
   return number % divisor
 a = "fizz"
