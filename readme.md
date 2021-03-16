@@ -11,8 +11,6 @@ Since we are using `pytest` to automatically evaluate your submissions, avoid na
 * exercise-1 Introduction to `git`
 * exercise-2 Introduction and installation of `python`
 * exercise-3 Data types:`string` and `list`
-  * Concatination, interpolation, search
-  * `in` operator etc.
 * exercise-4 More data types: `dict`, comprehensions
   * `regex`
 * exercise-5 files
@@ -33,7 +31,7 @@ Since we are using `pytest` to automatically evaluate your submissions, avoid na
   * normalisation
   * spaCy
 * exercise-12 NLP project II
-  * word frequencies
+  * word frequencies, palindromes 2?
 * exercise-13 NLP project III
   * own miniature project
 
