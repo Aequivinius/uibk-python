@@ -16,7 +16,11 @@ number_string = "123456789"
 print("The length of our strings: ")
 print(len(short_string))
 print(len(long_string))
-print("\n")
+print("------------")
+print("-" * 10)
+
+# Fun fact: In my python, strings can be
+# multiplied
 
 # Indexing and slicing
 # Since strings can be thought of as lists of 
