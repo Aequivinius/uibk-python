@@ -7,7 +7,7 @@
 # if it succeeds, i. e. the line of code uses proper key words and syntax, it
 # executes the line. For example, the following line prints to the console:
 
-print("Hello World")
+print("Winter is coming... again")
 print("-----------")
 
 # Feel free to change replace "Hello World" with something else.
@@ -30,8 +30,8 @@ print(a)
 # doesn't contain spaces. Feel free to change the variable name in the example
 # below.
 
-bucket = 11
-print(bucket)
+frodo = 11
+print(frodo)
 
 # If we want to use text in python, we need to differentiate it from variable
 # names. So if we want to deal with variable names, we just type its name

@@ -5,12 +5,16 @@
 # computer_remainder() function.
 
 def compute_remainder(number, divisor):
-	return number % divisor
+  return number % divisor
 
 def fizzbuzz(number):
-	# your code goes here
-	# don't forget to replace the return statement below as appropriate
-	return number
+  if compute_remainder(number, 5) == 0 and compute_remainder(number, 3) == 0:
+    return "fizzbuzz"
+  elif compute_remainder(number, 5) == 0:
+    return "buzz"
+  elif compute_remainder(number, 3) == 0:
+    return "fizz"
+  else: return number
 
 # this part below prints the result of the fizzbuzz function for the first 45
 # numbers
