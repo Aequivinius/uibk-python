@@ -34,7 +34,7 @@ long_string_length = len(long_string)
 print("Last character of long string: " +
       long_string[long_string_length - 1])
 print("Or simpler: " +
-      long_string[-2])
+      long_string[-1])
 print("Likewise, the 5th last character: " +
       long_string[-5])
 print("\n")
@@ -53,7 +53,6 @@ print("\n")
 # line
 print(short_string + "\n" + short_string)
 print(short_string + short_string)
-print("\n")  
 
 # Our long string, for example, has quite a lot
 # of them
@@ -74,7 +73,7 @@ for line in lines[:5]:
 print("\n")
 print("Using the in operator with a string: ")
 for character in long_string[:5]:
-	print(character, end=". ")
+	print(character)
 
 # We could also check which of these characters
 # is a white space
@@ -103,7 +102,7 @@ for character in long_string[:5]:
 # removed leading and trailing whitespaces in a
 # string - this is a very useful function when
 # dealing with texts!
-for character in long_string[:15]:
+for character in long_string[:5]:
 	if character.strip() == "":
 		print("Stripped character is empty")
 # "" is called the empty string
