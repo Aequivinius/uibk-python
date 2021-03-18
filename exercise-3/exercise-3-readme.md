@@ -1,11 +1,12 @@
-# exercise-3 Data types:`string` and `list`
-
-* review exercise-2
-* `git` in your IDE: Of course you can use whatever programming environment that you feel comfortable in! My recommendation is PyCharm, for which you can get a free license if you have a university e-mail address.
+# exercise-3 Data types: `string` and `list`
 
 ## Review exercise-2
 
 👏 Good work on exerise-2! This exercise will be similarly easy, and in the next one you will tackle your first bigger project!
+
+💡We're using replit.com to make your work easier, so you don't have to worry about installing `python` and have multiple versions of it on your machine.
+
+➡️`git` in your IDE: Of course you can use whatever programming environment that you feel comfortable in! My recommendation is PyCharm, for which you can get a free license if you have a university e-mail address.
 
 ## What are datatypes? What is a `string`?
 
