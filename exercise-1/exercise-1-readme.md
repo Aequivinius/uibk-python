@@ -5,11 +5,6 @@
 * How to use it specifically for this lecture? How to ask questions via issues?
 * Exercise: Create a `.md` file and make a `pull request`
 
-## Class
-
-* Language
-* OS
-
 ## What is `git`?
 
 * `git` ist eine Versionierungs-Technologie, welche sich als Standart in der Software-Entwicklung, der open source-Welt und insbesondere der Forschung etabliert hat. Damit Sie diese Technologie kennenlernen, werden wir Sie für den Übungsbetrieb einsetzen.
