@@ -1,3 +1,6 @@
+def tokenize(text):
+  return text.split()
+
 # call this using is_consonant(word, i)
 def is_consonant(word, index):
 	if word[index] in ['a', 'e', 'i', 'o', 'u']:
@@ -33,7 +36,7 @@ def contains_vowel(word):
 	
 	
 def ends_in_double_consonant(word):
-	if len(word >= 2) and is_consonant(word, len(word) - 1):
+	if len(word) >= 2 and is_consonant(word, len(word) - 1):
 		if word[-1] == word[-2]:
 			return True
 	return False
@@ -46,22 +49,59 @@ def ends_in_cvc(word):
 	return False
 				
 	
-def step_1A(word):
-	stem = word
-	
-	if stem[-4:] == "sses":
-		stem = stem[:-4] + "ss"
-	
-	elif stem[-3:] == "ies":
-		stem = stem[:-3] + "i"
-	
-	elif stem[-2:] == "ss":
-		stem = stem
+def step_1a(word):
+
+  if word[-4:] == "sses":
+    # remember, Porter algorithm matches
+    # the longest suffix in each step
+    # and then finishes the step
+    # without checking the other rules
+    return word[:-4] + "ss"
+
+  # TODO: the rest is up to you!
+
+  # no rule matches	
+  return word
 		
-	elif stem[-1:0] == "s":
-		stem = stem[:-1]
-	
-	return stem
-		
-def step_1B(word)
-	
+def step_1b(word):
+  # TODO
+  return word
+
+def step_1c(word):
+  # TODO
+  return word
+
+def step_2(word):
+  # TODO
+  return word
+
+def step_3(word):
+  # TODO
+  return word
+
+def step_4(word):
+  # TODO
+  return word
+
+def step_5a(word):
+  # TODO
+  return word
+
+def step_5b(word):
+  # TODO
+  return word
+
+def stem(word):
+  stem = step_1a(word)
+  stem = step_1b(stem)
+  stem = step_1c(stem)
+  stem = step_2(stem)
+  stem = step_3(stem)
+  stem = step_4(stem)
+  stem = step_5a(stem)
+  stem = step_5b(stem)
+
+  return stem
+
+result = [ { word : stem(word) } for word in tokenize("I saw the best minds of my generation destroyed by caresses")]
+print(result)
