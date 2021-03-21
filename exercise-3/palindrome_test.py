@@ -2,7 +2,6 @@ import palindrome
 
 def test_tokenize():
   assert palindrome.tokenize("the stale beer in desolate Fugazzi\'s") == ["the", "stale", "beer", "in", "desolate", "Fugazzi\'s"]
-  assert palindrome.tokenize("")
 
 def test_palindrome():
   assert palindrome.is_palindrome("sagas") == True
