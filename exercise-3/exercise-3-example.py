@@ -5,7 +5,7 @@
 # we're loading the file quite yet. Also, for 
 # demonstration of indexes, a number string
 
-short_string = "Alle meine Entchen"
+short_string = "All the ducks on the lake"
 
 import os
 this_file = os.path.dirname(os.path.abspath(__file__))
@@ -13,11 +13,11 @@ long_string = open(os.path.join(this_file, 'howl.txt')).read()
 number_string = "123456789"
 
 # First, the length of a string:
-print("The length of our strings: ")
+print("Länge der Strings: ")
 print(len(short_string))
 print(len(long_string))
 print("------------")
-print("-" * 10)
+print("-" * 12)
 
 # Fun fact: In my python, strings can be
 # multiplied
