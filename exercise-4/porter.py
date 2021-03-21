@@ -59,9 +59,7 @@ def ends(word, suffix):
 def step_1a(word):
 
   for suffix, replacement in [ ( "sses", "ss"),
-                               ( "ies", "i"),
-                               ( "ss", "ss"),
-                               ( "s", "") ]:
+                               ( "ies", "i") ]:
     if ends(word, suffix):
       return replace(word, suffix, replacement)
 
