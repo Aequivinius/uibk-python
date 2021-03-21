@@ -15,13 +15,16 @@ def tokenize(input_string):
 
 
 def is_palindrome(input_string):
+	palindrome_string = ""
 	tokens = tokenize(input_string)
 	for token in tokens:
 		token = token.lower()
-		if token == token[::-1]:
-			return True
-		else:
-			return False
+		palindrome_string = palindrome_string + token
+
+	if palindrome_string == palindrome_string[::-1]:
+		return True
+	else:
+		return False
 
 
 # You can use this for fast testing
