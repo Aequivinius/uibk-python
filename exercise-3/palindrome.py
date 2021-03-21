@@ -1,24 +1,26 @@
-# This is the skeleton for exercise-3
-# The goal is to create a crude tokenizer that
-# separates the input string into a list of
-# strings on whitespace.
+# tokenizer should separate into a list of strings on whitespace
 
-# In a second step, check if the string is a 
-# palindrome, i. e. whether it reads the same
-# backwards and forwards, ignoring case and
-# whitespace. For this, it might make sense to
+# ignore case, check if palindrome and return 
+# True or False 
 # glue the tokenized list back together directly
 
-def tokenize(input_string):
-	# Change this to return a list
-	return input_string
+def tokenize(input_string): #returns list
+  tokens = input_string.split(" ")
+  return tokens 
 
-def is_palindrome(input_string):
-	tokens = tokenize(input_string)
-	
-	# Change this to return True if the string
-	# is indeed a palindrom and False otherwise
-	return True
+#test funciton to glue the tokenized list back together
+#def concatenate(input_string):#
+  #tokens = "".join(tokenize(input_string)).lower()
+  #return tokens
 
-# You can use this for fast testing
+def is_palindrome(input_string): #checks if palindrome or not
+  tokens = "".join(tokenize(input_string)).lower()
+  if tokens == tokens[::-1]:
+    return True
+  else:
+    return False
+
 print(is_palindrome("test"))
+#print(tokenize("hallo ich bin anna"))
+#print(concatenate("hallo ich bin anna"))
+#print( ',' .join([ "F" , "B" , "I" ])) # 'F,B,I'
