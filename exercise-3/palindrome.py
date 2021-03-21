@@ -20,6 +20,8 @@ def is_palindrome(input_string):
     palindrome_string = palindrome_string + word.lower ()
   if palindrome_string == palindrome_string[::-1]:
   	return True
+  else:
+    return False
 
 # You can use this for fast testing
 print(is_palindrome("test"))
