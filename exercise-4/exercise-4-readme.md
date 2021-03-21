@@ -4,11 +4,11 @@
 
 ## Review exercise-3
 
-👏 
+* How to get the new exercise.
 
+## `dict`, `comprehension`
 
-
-## exercise-3
+## exercise-4
 
 🕰 Submit your exercise at least 15' before the next session starts. 
 
