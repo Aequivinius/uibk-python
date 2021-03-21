@@ -11,7 +11,7 @@
 
 def tokenize(input_string):
 	# Change this to return a list
-	return input_string
+	return input_string.split()
 
 def is_palindrome(input_string):
 	tokens = tokenize(input_string)
