@@ -51,12 +51,14 @@ def ends_in_cvc(word):
 	
 def step_1a(word):
 
-  if word[-4:] == "sses":
-    # remember, Porter algorithm matches
-    # the longest suffix in each step
-    # and then finishes the step
-    # without checking the other rules
-    return word[:-4] + "ss"
+  for suffix, replacement in [ ( "sses", "ss"),
+                               ( "ies", "i"),
+                               ( "ss", "ss"),
+                               ( "s", "") ]:
+    if ends(word, suffix):
+      return replace(word, suffix, replacement)
+
+  return word
 
   # TODO: the rest is up to you!
 
