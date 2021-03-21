@@ -4,27 +4,33 @@ def test_is_consonant():
   assert p.is_consonant("habibi", 0)
   assert p.is_consonant("yalla", 0)
   assert not p.is_consonant("eglise", 3)
-	
+
 
 def test_contains_vowel():
   assert p.contains_vowel("habibi")
   assert not p.contains_vowel("crwth")
 
-	
+
 def test_ends_in_double_consonant():
   assert not p.ends_in_double_consonant("lock")
   assert not p.ends_in_double_consonant("log")
   assert p.ends_in_double_consonant("logg")
-				
-	
+
+def test_replace():
+  assert p.replace("cheese", "ese", "sition") == "chesition"
+
+def test_ends():
+  assert p.ends("premonition", "ition") == True
+  assert p.ends("premonition", "lition") == False
+
 def test_measure():
   assert p.measure("trouble") == 1
   assert p.measure("troubles") == 2
 
 
 def test_step_1a():
-	assert p.step_1a("caresses") == "caress"
-  assert p.step_1a("ponues") == "poni"
+  assert p.step_1a("caresses") == "caress"
+  assert p.step_1a("ponies") == "poni"
   assert p.step_1a("caress") == "caress"
   assert p.step_1a("cats") == "cat"
 
