@@ -9,28 +9,14 @@
 # whitespace. For this, it might make sense to
 # glue the tokenized list back together directly
 
-test = "hello, my name is Peter, I am 26 years old"
-
 def tokenize(input_string):
-  return (input_string.split(" "))
-
-token = tokenize.replace(" ", "")
-
-def lowerword(token):
-  return(token.lower())
-
-lowertoken = lowerword
-
-def reverse(lowerword)
-  return lowerword[::-1]
-
-reverseword = reverse(lowerword)
+  token = input_string.split(" ")
+  return token
 
 def is_palindrome(input_string):
-  if lowerword == reverseword
-    return("True")
-  else 
-    return("False")
+  token = "".join(tokenize(input_string)).lower()
+  if token == token[::-1]:
+    return True
+  else:
+    return False
 
-# You can use this for fast testing
-print(is_palindrome(test))
