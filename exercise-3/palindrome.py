@@ -10,15 +10,26 @@
 # glue the tokenized list back together directly
 
 def tokenize(input_string):
-	# Change this to return a list
-	return input_string
+	seperated_words = input_string.split(" ")
+	return seperated_words
 
 def is_palindrome(input_string):
-	tokens = tokenize(input_string)
-	
-	# Change this to return True if the string
+  tokens = tokenize(input_string.upper())
+  string = "".join(tokens)
+  length = len(string)
+  index_right = length - 1
+  for character in string:
+    if character == string[index_right]:
+      pass
+    else:
+      return False
+    index_right = index_right - 1
+  return True
+  # Change this to return True if the string
 	# is indeed a palindrom and False otherwise
-	return True
-
+	
 # You can use this for fast testing
-print(is_palindrome("test"))
+print(is_palindrome("Ottonormal"))
+
+
+
