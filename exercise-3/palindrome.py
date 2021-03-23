@@ -11,14 +11,20 @@
 
 def tokenize(input_string):
 	# Change this to return a list
-	return input_string
+  mylist = input_string.split(" ")
+  return mylist
 
 def is_palindrome(input_string):
-	tokens = tokenize(input_string)
-	
-	# Change this to return True if the string
-	# is indeed a palindrom and False otherwise
-	return True
+  splitted_input_string = tokenize(input_string)
+  
+
+  token = "".join(splitted_input_string).lower()
+  
+  if token == token[::-1]:
+    return True
+  else:
+    return False
+  
 
 # You can use this for fast testing
-print(is_palindrome("test"))
+print(is_palindrome("annah anna"))
