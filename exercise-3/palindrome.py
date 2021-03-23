@@ -29,7 +29,7 @@ def is_palindrome(input_string):
 	# is indeed a palindrom and False otherwise
 	
 # You can use this for fast testing
-print(is_palindrome("Ottonormal"))
+print(is_palindrome("Otto"))
 
 
 
