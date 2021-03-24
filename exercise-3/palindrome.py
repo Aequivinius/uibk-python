@@ -24,8 +24,9 @@ def is_palindrome(input_string):
 
   for word in tokens:
     palindrome_string = palindrome_string + word.lower()
-    if palindrome_string == palindrome_string[::-1]:
-      return True
-
+  if palindrome_string == palindrome_string[::-1]:
+    return True
+    
   else:
     print("This is not a palindrome")
+    return False
