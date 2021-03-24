@@ -10,15 +10,22 @@
 # glue the tokenized list back together directly
 
 def tokenize(input_string):
-	# Change this to return a list
-	return input_string
+  token_list = input_string.split()
+  token_list = input_string.split(" ")
+  return token_list
+
 
 def is_palindrome(input_string):
-	tokens = tokenize(input_string)
-	
-	# Change this to return True if the string
-	# is indeed a palindrom and False otherwise
-	return True
+  palindrome_string = ""
+  tokens = tokenize(input_string)
+  for token in tokens:
+    token = token.lower()
+    palindrome_string = palindrome_string + token
 
-# You can use this for fast testing
-print(is_palindrome("test"))
+  for word in tokens:
+    palindrome_string = palindrome_string + word.lower()
+    if palindrome_string == palindrome_string[::-1]:
+      return True
+
+  else:
+    print("This is not a palindrome")
