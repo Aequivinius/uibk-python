@@ -17,7 +17,7 @@ print("The length of our strings: ")
 print(len(short_string))
 print(len(long_string))
 print("------------")
-print("-" * 10)
+print("-" * 12)
 
 # Fun fact: In my python, strings can be
 # multiplied
