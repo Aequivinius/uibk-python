@@ -8,9 +8,17 @@ def compute_remainder(number, divisor):
 	return number % divisor
 
 def fizzbuzz(number):
-	# your code goes here
-	# don't forget to replace the return statement below as appropriate
-	return number
+  
+  num3 = compute_remainder(number, 3)
+  num5 = compute_remainder(number, 5)
+  if num3 == 0 and num5 == 0:
+    return "fizzbuzz"
+  
+  elif(num5 == 0):
+    return "buzz"
+
+  elif(num3 == 0):
+    return "fizz"
 
 # this part below prints the result of the fizzbuzz function for the first 45
 # numbers
