@@ -94,7 +94,8 @@ print("Let's look at return values:")
 def function_with_return_value(parameter, another_parameter):
 	return parameter + another_parameter
 
-result = function_with_return_value(10,13)
+result = function_with_return_value(11,13)
+print(function_with_return_value(3,4))
 print(result)
 
 # Finally, the IF statement allows you to structure the code with conditions.

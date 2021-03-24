@@ -16,7 +16,7 @@ number_string = "123456789"
 print("The length of our strings: ")
 print(len(short_string))
 print(len(long_string))
-print("------------")
+print("----------")
 print("-" * 10)
 
 # Fun fact: In my python, strings can be
