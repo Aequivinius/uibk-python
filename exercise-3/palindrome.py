@@ -10,12 +10,11 @@
 # glue the tokenized list back together directly
 
 def tokenize(input_string):
-  input_l = input_string.lower()
-  token_list = input_l.split(" ")
+  token_list = input_string.split(" ")
   return token_list
 
 def is_palindrome(input_string):
-  token = "".join(tokenize(input_string))
+  token = "".join(tokenize(input_string)).lower()
   return(token == token[::-1])
 
 # You can use this for fast testing
