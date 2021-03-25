@@ -52,7 +52,6 @@ def replace(word, suffix, replacement):
   return word[:-len(suffix)] + replacement
 
 def ends(word, suffix):
-  print(word[-len(suffix):])
   return word[-len(suffix):] == suffix
 
 
@@ -144,5 +143,5 @@ def stem(word):
 
   return stem
 
-result = [ { word : stem(word) } for word in tokenize("I saw the best minds of my generation destroyed by caresses")]
+result = [ { word : stem(word) } for word in tokenize("I agreed with the greatest minds of my generalization destroyed by caresses")]
 print(result)
