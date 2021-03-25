@@ -4,15 +4,24 @@
 # if it is divisible by 3 and 5. You can use the predefined
 # computer_remainder() function.
 
+
 def compute_remainder(number, divisor):
-	return number % divisor
+    return number % divisor
+
 
 def fizzbuzz(number):
-	# your code goes here
-	# don't forget to replace the return statement below as appropriate
-	return number
+    if compute_remainder(number, 3) == 0 and compute_remainder(number, 5) == 0:
+        fizzbuzz_number = 'fizzbuzz'
+    elif compute_remainder(number, 3) == 0:
+        fizzbuzz_number = 'fizz'
+    elif compute_remainder(number, 5) == 0:
+        fizzbuzz_number = 'buzz'
+    else:
+        fizzbuzz_number = number
+    return fizzbuzz_number
+
 
 # this part below prints the result of the fizzbuzz function for the first 45
 # numbers
-for number in range(0,46):
-	print(str(number) + " : " + str(fizzbuzz(number)))
+for number in range(0, 46):
+    print(str(number) + " : " + str(fizzbuzz(number)))
