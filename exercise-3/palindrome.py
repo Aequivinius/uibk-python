@@ -3,27 +3,22 @@
 # separates the input string into a list of
 # strings on whitespace.
 
-# In a second step, check if the string is a
+# In a second step, check if the string is a 
 # palindrome, i. e. whether it reads the same
 # backwards and forwards, ignoring case and
 # whitespace. For this, it might make sense to
 # glue the tokenized list back together directly
 
 def tokenize(input_string):
-	token_list = input_string.split(" ")
-	return token_list
-
+	# Change this to return a list
+	return input_string
 
 def is_palindrome(input_string):
-	palindrome_string = ""
 	tokens = tokenize(input_string)
-	for word in tokens:
-		palindrome_string = palindrome_string + word.lower()
-	if palindrome_string == palindrome_string[::-1]:
-		return True
-	else:
-		return False
-
+	
+	# Change this to return True if the string
+	# is indeed a palindrom and False otherwise
+	return True
 
 # You can use this for fast testing
 print(is_palindrome("test"))
