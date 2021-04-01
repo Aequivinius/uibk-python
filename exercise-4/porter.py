@@ -1,3 +1,4 @@
+import pprint
 def tokenize(text):
     return text.split()
 
@@ -44,7 +45,7 @@ def ends_in_double_consonant(word):
 
 
 def ends_in_cvc(word):
-    if len(word) > 3:   # if the word ends in CVC and the last C is not a w, x or y: return True
+    if len(word) >= 3:   # if the word ends in CVC and the last C is not a w, x or y: return True
         if is_consonant(word, len(word) - 3) and not is_consonant(word, len(word) - 2) and is_consonant(word, len(
                 word) - 1) and word[-1] not in ['w', 'x', 'y']:
             return True
@@ -84,13 +85,19 @@ def step_1b(word):
         else:
             return word
 
-    elif ends(word, "ed") and contains_vowel(word[:-2]):   # if the stem contains a vowel
-        stem = replace(word, "ed", "")  # cut "ed" off
-        return step_1b_helper(stem)
+    elif ends(word, "ed"):
+        if contains_vowel(word[:-2]):   # if the stem contains a vowel
+            stem = replace(word, "ed", "")  # cut "ed" off
+            return step_1b_helper(stem)
+        else:
+            return word
 
-    elif ends(word, "ing") and contains_vowel(word[:-3]):
-        stem = replace(word, "ing", "") # cut off "ing"
-        return step_1b_helper(stem)
+    elif ends(word, "ing"):
+        if contains_vowel(word[:-3]):
+            stem = replace(word, "ing", "") # cut off "ing"
+            return step_1b_helper(stem)
+        else:
+            return word
 
     return word
 
@@ -171,25 +178,24 @@ def step_4(word):
                 "ant", "ement", "ent", "ion", "ou", "ism", "ate",
                 "iti", "ous", "ive", "ize"]
     for suffix in suffixes:
-        if ends(word, suffix) and measure(word[:-len(suffix)]) > 1:
-            if suffix == "ion":
-                if word[-len(suffix)-1] == "t" or word[-len(suffix)-1] == "s":
-                    return replace(word, suffix, "")
+        if ends(word, suffix):
+            if measure(word[:-len(suffix)]) > 1:
+                if suffix == "ion":
+                    if word[-len(suffix)-1] == "t" or word[-len(suffix)-1] == "s":
+                        return replace(word, suffix, "")
+                    else:
+                        return word
                 else:
-                    return word
-            else:
-                return replace(word, suffix, "")
+                    return replace(word, suffix, "")
     return word
 
 
 def step_5a(word):
     if ends(word, "e"):
-        if measure(word[:-1]) == 1:
-            if not ends_in_cvc(word[:-1]):
-                return word
-            else:
-                return replace(word, "e", "")
-        elif measure(word[:-1]) > 1:
+        if measure(word[:-1]) > 1:
+            return replace(word, "e", "")
+        elif measure(word[:-1]) == 1 and not ends_in_cvc(word[:-1]):
+            print("word is ", word)
             return replace(word, "e", "")
     return word
 
@@ -216,4 +222,4 @@ def stem(word):
 
 result = [{word: stem(word)} for word in
           tokenize("I agreed with the greatest minds of my generalization destroyed by caresses")]
-print(result)
+pprint.pprint(result)
