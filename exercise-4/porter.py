@@ -10,7 +10,7 @@ def is_consonant(word, index):
         if index == 0:
             return True
         else:
-            return not is_consonant(word, index - 1)        # it is no a C
+            return not is_consonant(word, index - 1)        # is False
     return True
 
 
@@ -68,20 +68,30 @@ def step_1a(word):
         return replace(word, "ss", "ss")
     elif word[-1] == "s":
         return replace(word, "s", "")
+        # remember, Porter algorithm matches
+        # the longest suffix in each step
+        # and then finishes the step
+        # without checking the other rules
+        # return word[:-4] + "ss"
+    # no rule matches
     return word
 
 
 def step_1b(word):
-    if ends(word, "eed") and measure(word[:-3]) > 0:      # [:-3] is needed because we want to measure only the stem
-        return replace(word, "eed", "ee")   # if the measure of the stem is > 0 (so at least VC + either C or V at some position), replace eed with ee
+    if ends(word, "eed"):
+        if measure(word[:-3]) > 0:      # [:-3] is needed because we want to measure only the stem
+            return replace(word, "eed", "ee")   # if the measure of the stem is > 0 (so at least VC + either C or V at some position), replace eed with ee
+        else:
+            return word
 
-    if ends(word, "ed") and contains_vowel(word[:-2]):   # if the stem contains a vowel
+    elif ends(word, "ed") and contains_vowel(word[:-2]):   # if the stem contains a vowel
         stem = replace(word, "ed", "")  # cut "ed" off
         return step_1b_helper(stem)
 
-    if ends(word, "ing") and contains_vowel(word[:-3]):
+    elif ends(word, "ing") and contains_vowel(word[:-3]):
         stem = replace(word, "ing", "") # cut off "ing"
         return step_1b_helper(stem)
+
     return word
 
 
@@ -100,6 +110,7 @@ def step_1b_helper(word):
 
     if measure(word) == 1 and ends_in_cvc(word):
         return word + "e"
+
     return word
 
 
@@ -110,18 +121,8 @@ def step_1c(word):
         return word
 
 
-def list_replace_helper(word, suffix_pair, m=0):    # default m == 0
-    for suffix in suffix_pair:
-        if ends(word, suffix[0]):
-            if measure(word[:-len(suffix[0])]) > m:
-                return replace(word, suffix[0], suffix[1])
-            else:
-                return word
-    return word
-
-
-def step_2(word):		# divided into sections to enhance performance (if I understood correctly)
-    if len(word) > 2:		# necessary to avoid index error
+def step_2(word):
+    if len(word) > 2:
         if word[-2] == "a":
             suffix_pair = [["ational", "ate"], ["tional", "tion"]]
             return list_replace_helper(word, suffix_pair)
@@ -145,6 +146,16 @@ def step_2(word):		# divided into sections to enhance performance (if I understo
         elif word[-2] == "t":
             suffix_pair = [["aliti", "al"], ["iviti", "ive"], ["biliti", "ble"]]
             return list_replace_helper(word, suffix_pair)
+    return word
+
+
+def list_replace_helper(word, suffix_pair, m=0):    # default m == 0
+    for suffix in suffix_pair:
+        if ends(word, suffix[0]):
+            if measure(word[:-len(suffix[0])]) > m:
+                return replace(word, suffix[0], suffix[1])
+            else:
+                return word
     return word
 
 
@@ -173,8 +184,11 @@ def step_4(word):
 
 def step_5a(word):
     if ends(word, "e"):
-        if measure(word[:-1]) == 1 and not ends_in_cvc(word[:-1]):
-            return replace(word, "e", "")
+        if measure(word[:-1]) == 1:
+            if not ends_in_cvc(word[:-1]):
+                return word
+            else:
+                return replace(word, "e", "")
         elif measure(word[:-1]) > 1:
             return replace(word, "e", "")
     return word
