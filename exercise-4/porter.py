@@ -146,7 +146,7 @@ def step_2(word):
             "iviti" : "ive",
             "biliti" : "ble" }
   for suffix, replacement in suffixe.items():
-    if measure(word[-len(suffix)]) > 0:
+    if measure(word[:-len(suffix)]) > 0:
       if ends(word,suffix):
         return replace(word, suffix, replacement)
   return word
@@ -221,5 +221,5 @@ def stem(word):
 
   return stem
 
-result = [ { word : stem(word) } for word in tokenize("I agreed with the greatest minds of my generalization destroyed by caresses")]
+result = [{ word : stem(word)} for word in tokenize("I agreed with the greatest minds of my generalization destroyed by caresses")]
 print(result)
