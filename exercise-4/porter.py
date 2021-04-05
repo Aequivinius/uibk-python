@@ -202,10 +202,8 @@ def step_4(word):
 def step_5a(word):
   if ends(word, "e"):
     if measure(word[:-1]) > 1:
-      print("hier")
       return replace(word, "e", "") 
     elif (measure(word[:-1]) == 1) and not ends_in_cvc(word[:-1]):
-      print("oder hier")
       return replace(word, "e", "")
   return word
 
