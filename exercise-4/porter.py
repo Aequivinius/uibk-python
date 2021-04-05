@@ -56,7 +56,6 @@ def ends(word, suffix):
 
 
 def step_1a(word):
-
   if word[-4:] == "sses":
     # remember, Porter algorithm matches
     # the longest suffix in each step
@@ -64,9 +63,15 @@ def step_1a(word):
     # without checking the other rules
     return word[:-4] + "ss"
 
-  # TODO: the rest is up to you!
+  if word[-3:] == "ies":
+    return word[:-3] + "i"
+  
+  if word[-2:] == "ss":
+    return word[:-2] + "ss"
+  
+  if word[-1:] == "s":
+    return word[:-1]
 
-  # no rule matches
   return word
 
 def step_1b(word):
@@ -84,8 +89,12 @@ def step_1b(word):
     else:
       return word
 
-  # TODO
-
+  if ends(word, "ing"):
+    if contains_vowel(word[:-3]):
+      stem = replace(word, "ing", "")
+      return step_1b_helper(stem)
+    else:
+      return word
   return word
 
 def step_1b_helper(word):
@@ -108,28 +117,97 @@ def step_1b_helper(word):
   return word
 
 def step_1c(word):
-  # TODO
+  if ends(word, "y"):
+    if contains_vowel(word[:-1]):
+      return replace(word, "y", "i")
+    else:
+      return word
   return word
 
 def step_2(word):
-  # TODO
+  suffixe = {"ational" : "ate",
+            "tional" : "tion",
+            "enci" : "ence",
+            "anci" : "ance",
+            "izer" : "ize",
+            "abli" : "able",
+            "alli" : "al",
+            "entli" : "ent",
+            "eli" : "e",
+            "ousli" : "ous",
+            "ization" : "ize",
+            "ation" : "ate",
+            "ator" : "ate",
+            "alsim" : "al",
+            "iveness" : "ive",
+            "fulness" : "ful",
+            "ousness" : "ous",
+            "aliti" : "al",
+            "iviti" : "ive",
+            "biliti" : "ble" }
+  for suffix, replacement in suffixe.items():
+    if measure(word[-len(suffix)]) > 0:
+      if ends(word,suffix):
+        return replace(word, suffix, replacement)
   return word
 
 def step_3(word):
-  # TODO
+  suffixe = {"icate" : "ic",
+            "ative" : "",
+            "alize" : "al",
+            "iciti" : "ic",
+            "ical" : "ic",
+            "ful" : "",
+            "ness" : "" }
+  for suffix, replacement in suffixe.items():
+    if measure(word[:-len(suffix)]) > 0:
+      if ends(word, suffix):
+        return replace(word, suffix, replacement)
   return word
 
 def step_4(word):
-  # TODO
+  suffixe = {"al" : "",
+            "ance" : "",
+            "ence" : "",
+            "er" : "",
+            "ic" : "",
+            "able" : "",
+            "ible" : "",
+            "ant" : "",
+            "ement" : "",
+            "ment" : "",
+            "ent" : "",
+            "ion" : "",
+            "ou" : "",
+            "ism" : "",
+            "ate" : "",
+            "iti" : "",
+            "ous" : "",
+            "ive" : "",
+            "ize" : "" }
+  for suffix, replacement in suffixe.items():
+    if measure(word[:-len(suffix)]) > 1:
+      if ends(word, suffix):
+        if ends(word, "ion"):
+          if word[-4] == "s" or word[-4] == "t":
+            return replace(word, suffix, replacement)
+          else:
+            return word
+        return replace(word, suffix, replacement)
   return word
 
 def step_5a(word):
-  # TODO
+  if ends(word, "e"):
+     if measure(word[:-1]) > 1:
+       return replace(word, "e", "") 
+     elif (measure(word[:-1]) == 1) and not ends_in_cvc(word[:-1]):
+       return replace(word, "e", "")
   return word
 
 def step_5b(word):
-  # TODO
-  return word
+  if measure(word[:-1]) > 1 and ends(word, "l") and ends_in_double_consonant(word):
+   return replace(word, "ll", "l") 
+  return word 
 
 def stem(word):
   stem = step_1a(word)
