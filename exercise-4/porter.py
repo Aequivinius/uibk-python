@@ -12,11 +12,11 @@ def is_consonant(word, index):
 			return not is_consonant(word, index - 1)
 	return True
 
-
+# Wahrheitswert von is_consonant(word, i) wird einfach umgedreht!
 def is_vowel(word, index):
 	return not is_consonant(word, index)
 
-
+# das versteh ich noch nicht ganz.... -> Nachlesen!
 def measure(word):
 	cvs = ""
 	for i in range(len(word)):
@@ -27,14 +27,14 @@ def measure(word):
 
 	return cvs.count("vc")
 
-
+# schaut, ob im Wort ein Konsonant vorkommt
 def contains_vowel(word):
 	for index in range(len(word)):
 		if not is_consonant(word, index):
 			return True
 	return False
 
-
+# schaut, ob Wort mit doppeltem Konsonanten enedet
 def ends_in_double_consonant(word):
 	if len(word) >= 2 and is_consonant(word, len(word) - 1):
 		if word[-1] == word[-2]:
@@ -57,36 +57,51 @@ def ends(word, suffix):
 
 def step_1a(word):
 
-  if word[-4:] == "sses":
-    # remember, Porter algorithm matches
-    # the longest suffix in each step
-    # and then finishes the step
-    # without checking the other rules
-    return word[:-4] + "ss"
+	if word[-4:] == "sses":
+		return word[:-4] + "ss"
+	else:
+		return word 
+	
+	if word[-3:] == "ies":
+		return word[:-3] + "i"
+	else:
+		return word
 
-  # TODO: the rest is up to you!
+	if word[-2:] == "ss":
+		return word[:-2] == "ss"
+	else:
+		return word
+	
+	if word[-1:] == "s":
+		return word[:-1] == ""
+	else:
+		return word
 
-  # no rule matches
-  return word
+	return word
 
 def step_1b(word):
 
-  if ends(word, "eed"):
-    if measure(word[:-3]) > 0:
-      return replace(word, "eed", "ee")
-    else:
-      return word
+	if ends(word, "eed"):
+		if measure(word[:-3]) > 0:
+			return replace(word, "eed", "ee")
+		else:
+			return word
 
-  if ends(word, "ed"):
-    if contains_vowel(word[:-2]):
-      stem = replace(word, "ed", "")
-      return step_1b_helper(stem)
-    else:
-      return word
+	if ends(word, "ed"):
+		if contains_vowel(word[:-2]):
+			stem = replace(word, "ed", "")
+			return step_1b_helper(stem)
+		else:
+			return word
 
-  # TODO
-
-  return word
+	if ends(word, "ing"):
+		if contains_vowel(word[:-3]):
+			stem = replace(word, "ing", "")
+			return step_1b_helper(stem)
+		else:
+			return word
+		
+	return word
 
 def step_1b_helper(word):
 
@@ -108,15 +123,53 @@ def step_1b_helper(word):
   return word
 
 def step_1c(word):
-  # TODO
-  return word
+	if ends(word, "y"):
+		if contains_vowel(word[:-1]):
+			return word[:-1] + "i"
+		else:
+			return word
+	else:
+		return word
 
 def step_2(word):
-  # TODO
+  for suffix_pair in [ [ "ational", "ate" ],
+                       [ "tional", "tion" ],
+                       [ "enci", "ence" ], 
+											 [ "anci", "ence" ],
+											 [ "izer", "ize" ],
+											 [ "abli", "able" ],
+											 [ "alli", "al" ],
+											 [ "entli", "ent" ],
+											 [ "eli", "e" ],
+											 [ "ousli", "ous" ],
+											 [ "ization", "ize" ],
+											 [ "ation", "ate" ],
+											 [ "ator", "ate"], 
+											 [ "alism", "al" ],
+											 [ "iveness", "ive" ],
+											 [ "fulness", "ful" ],
+											 [ "ousness", "ous" ],
+											 [ "aliti", "al" ],
+											 [ "iviti", "ive" ],
+											 [ "biliti", "ble" ] ]:
+    suffix = suffix_pair[0]
+    replacement = suffix_pair[1]
+    if ends(word, suffix) and measure(word[:-len(suffix)]) > 0:
+      return replace(word, suffix, replacement)
   return word
 
 def step_3(word):
-  # TODO
+  for suffix_pair in [ [ "icate", "ic" ],
+                       [ "ative", "" ],
+                       [ "alize", "al" ], 
+											 [ "iciti", "ic" ],
+											 [ "ical", "ic" ],
+											 [ "ful", "" ],
+											 [ "ness", "" ] ]:
+    suffix = suffix_pair[0]
+    replacement = suffix_pair[1]
+    if ends(word, suffix) and measure(word[:-len(suffix)]) > 0:
+      return replace(word, suffix, replacement)
   return word
 
 def step_4(word):
