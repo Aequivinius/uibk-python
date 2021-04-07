@@ -56,7 +56,6 @@ def ends(word, suffix):
 
 
 def step_1a(word):
-
   if word[-4:] == "sses":
     # remember, Porter algorithm matches
     # the longest suffix in each step
@@ -72,8 +71,7 @@ def step_1a(word):
 
   if word [-1:] == "s":
     return word[:-2] + "ss"
-  # TODO: the rest is up to you!
-  # no rule matches
+  
   return word
 
 def step_1b(word):
@@ -91,7 +89,6 @@ def step_1b(word):
     else:
       return word
 
-  # TODO
   if ends(word, "ing"):
     if contains_vowel(word[:-3]):
       stem = replace(word, "ing", "")
@@ -203,7 +200,7 @@ def step_5a(word):
   if ends(word, "e"):
     if measure(word[:-1]) > 1:
       return replace(word, "e", "")
-    elif (measure(word[:-1]) == 1) and not ends_in_cvc(word[:-1]):)
+    elif (measure(word[:-1]) == 1) and not ends_in_cvc(word[:-1]):
       return replace(word, "e", "")
   return word
 
@@ -224,6 +221,4 @@ def stem(word):
 
   return stem
 
-result = [ { word : stem(word) } for word in tokenize("rate")]
-print(result)
-#I agreed with the greatest minds of my generalization destroyed by caresses")]
+result = [{ word : stem(word)} for word in tokenize("I agreed with the greatest minds of my generalization destroyed by caresses")]
