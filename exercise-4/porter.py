@@ -198,7 +198,7 @@ def step_4(word):
 
 def step_5a(word):
   if ends(word, "e"):
-     if measure(word[:-1]) > 1:
+      if measure(word[:-1]) > 1:
        return replace(word, "e", "") 
      elif (measure(word[:-1]) == 1) and not ends_in_cvc(word[:-1]):
        return replace(word, "e", "")
@@ -206,8 +206,8 @@ def step_5a(word):
 
 def step_5b(word):
   if measure(word[:-1]) > 1 and ends(word, "l") and ends_in_double_consonant(word):
-   return replace(word, "ll", "l") 
-  return word 
+      return replace(word, "ll", "l")
+  return word
 
 def stem(word):
   stem = step_1a(word)
