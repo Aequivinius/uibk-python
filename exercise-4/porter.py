@@ -3,50 +3,50 @@ def tokenize(text):
 
 # call this using is_consonant(word, i)
 def is_consonant(word, index):
-	    if word[index] in ['a', 'e', 'i', 'o', 'u']:
-		          return False
-	    if word[index] == 'y':
-		          if index == 0:
-			                return True
-		          else:
-			                return not is_consonant(word, index - 1)
-	    return True
+	if word[index] in ['a', 'e', 'i', 'o', 'u']:
+		return False
+	if word[index] == 'y':
+		if index == 0:
+			return True
+		else:
+			return not is_consonant(word, index - 1)
+	return True
 
 
 def is_vowel(word, index):
-	    return not is_consonant(word, index)
+	return not is_consonant(word, index)
 
 
 def measure(word):
-	    cvs = ""
-	    for i in range(len(word)):
-		          if is_consonant(word, i):
-			                cvs = cvs + "c"
-		          else:
-			                cvs = cvs + "v"
+	cvs = ""
+	for i in range(len(word)):
+		if is_consonant(word, i):
+			cvs = cvs + "c"
+		else:
+			cvs = cvs + "v"
 
-	    return cvs.count("vc")
+	return cvs.count("vc")
 
 
 def contains_vowel(word):
-	    for index in range(len(word)):
-		          if not is_consonant(word, index):
-			                return True
-	    return False
+	for index in range(len(word)):
+		if not is_consonant(word, index):
+			return True
+	return False
 
 
 def ends_in_double_consonant(word):
-	    if len(word) >= 2 and is_consonant(word, len(word) - 1):
-		          if word[-1] == word[-2]:
-			                return True
-	    return False
+	if len(word) >= 2 and is_consonant(word, len(word) - 1):
+		if word[-1] == word[-2]:
+			return True
+	return False
 
 
 def ends_in_cvc(word):
-	    if len(word) >= 3:
-		          if is_consonant(word, len(word) - 3) and not is_consonant(word, len(word) - 2) and is_consonant(word, len(word) - 1) and word[-1] not in ['w', 'x', 'y']:
-			                return True
-	    return False
+	if len(word) > 3:
+		if is_consonant(word, len(word) - 3) and not is_consonant(word, len(word) - 2) and is_consonant(word, len(word) - 1) and word[-1] not in ['w', 'x', 'y']:
+			return True
+	return False
 
 def replace(word, suffix, replacement):
   return word[:-len(suffix)] + replacement
@@ -65,13 +65,13 @@ def step_1a(word):
 
   if word[-3:] == "ies":
     return word[:-3] + "i"
-
-  if word [-2:] == "ss":
-    return word[:-2] + "ss"
-
-  if word [-1:] == "s":
+  
+  if word[-2:] == "ss":
     return word[:-2] + "ss"
   
+  if word[-1:] == "s":
+    return word[:-1]
+
   return word
 
 def step_1b(word):
@@ -117,7 +117,7 @@ def step_1b_helper(word):
   return word
 
 def step_1c(word):
-  if ends (word, "y")
+  if ends(word, "y"):
     if contains_vowel(word[:-1]):
       return replace(word, "y", "i")
     else:
@@ -143,12 +143,12 @@ def step_2(word):
             "fulness" : "ful",
             "ousness" : "ous",
             "aliti" : "al",
-            "iviti" : "ive",
-            "biliti" : "ble" }
+             "iviti" : "ive",
+             "biliti" : "ble" }
   for suffix, replacement in suffixe.items():
-    if measure(word[:-len(suffix)]) > 0:
-      if ends(word, suffix):
-        return replace(word, usffix, replacement)
+     if measure(word[:-len(suffix)]) > 0:
+       if ends(word,suffix):
+         return replace(word, suffix, replacement)
   return word
 
 def step_3(word):
@@ -188,26 +188,26 @@ def step_4(word):
   for suffix, replacement in suffixe.items():
     if measure(word[:-len(suffix)]) > 1:
       if ends(word, suffix):
-        if ends(word, "ion")
+        if ends(word, "ion"):
           if word[-4] == "s" or word[-4] == "t":
             return replace(word, suffix, replacement)
-          else:         
+          else:
             return word
         return replace(word, suffix, replacement)
   return word
 
 def step_5a(word):
   if ends(word, "e"):
-    if measure(word[:-1]) > 1:
-      return replace(word, "e", "")
-    elif (measure(word[:-1]) == 1) and not ends_in_cvc(word[:-1]):
-      return replace(word, "e", "")
+     if measure(word[:-1]) > 1:
+       return replace(word, "e", "") 
+     elif (measure(word[:-1]) == 1) and not ends_in_cvc(word[:-1]):
+       return replace(word, "e", "")
   return word
 
 def step_5b(word):
-  if measure(word[:-1]) > 1 and ends(word, "l") and ends_in_double_consonant(word):)
-    return replace(word, "ll", "l")
-  return word
+  if measure(word[:-1]) > 1 and ends(word, "l") and ends_in_double_consonant(word):
+   return replace(word, "ll", "l") 
+  return word 
 
 def stem(word):
   stem = step_1a(word)
@@ -220,6 +220,6 @@ def stem(word):
   stem = step_5b(stem)
 
   return stem
-  
+
 result = [{ word : stem(word)} for word in tokenize("I agreed with the greatest minds of my generalization destroyed by caresses")]
 print(result)
