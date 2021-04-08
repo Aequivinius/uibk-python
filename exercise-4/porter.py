@@ -16,7 +16,6 @@ def is_consonant(word, index):
 def is_vowel(word, index):
 	return not is_consonant(word, index)
 
-# das versteh ich noch nicht ganz.... -> Nachlesen!
 def measure(word):
 	cvs = ""
 	for i in range(len(word)):
@@ -59,47 +58,36 @@ def step_1a(word):
 
 	if word[-4:] == "sses":
 		return word[:-4] + "ss"
-	else:
-		return word 
-	
+
 	if word[-3:] == "ies":
 		return word[:-3] + "i"
-	else:
-		return word
-
+	
 	if word[-2:] == "ss":
-		return word[:-2] == "ss"
-	else:
 		return word
 	
 	if word[-1:] == "s":
-		return word[:-1] == ""
+		return word[:-1]
+
 	else:
 		return word
-
-	return word
 
 def step_1b(word):
 
 	if ends(word, "eed"):
 		if measure(word[:-3]) > 0:
 			return replace(word, "eed", "ee")
-		else:
-			return word
+		else: return word
 
 	if ends(word, "ed"):
 		if contains_vowel(word[:-2]):
 			stem = replace(word, "ed", "")
 			return step_1b_helper(stem)
-		else:
-			return word
+		else: return word
 
 	if ends(word, "ing"):
 		if contains_vowel(word[:-3]):
 			stem = replace(word, "ing", "")
 			return step_1b_helper(stem)
-		else:
-			return word
 		
 	return word
 
@@ -173,28 +161,64 @@ def step_3(word):
   return word
 
 def step_4(word):
-  # TODO
-  return word
+	for suffix_pair in [ [ "al", "" ],
+                       [ "ance", "" ],
+                       [ "ence", "" ], 
+											 [ "er", "" ],
+											 [ "ic", "" ],
+											 [ "able", "" ],
+											 [ "ible", "" ],
+											 [ "ant", "" ],
+											 [ "ement", "" ],
+											 [ "ent", "" ],
+											 [ "ou", "" ],
+											 [ "ism", "" ],
+											 [ "ate", "" ],
+											 [ "iti", "" ],
+											 [ "ous", "" ],
+											 [ "ive", "" ],
+											 [ "ize", "" ] ]:
+		suffix = suffix_pair[0]
+		replacement = suffix_pair[1]
+		if ends(word, suffix) and measure(word[:-len(suffix)]) > 1:
+			return replace(word, suffix, replacement)
+
+
+	if measure(word[:-4]) > 1 and ends(word, "tion" or "sion"):
+		return replace(word, word[-4:], "")
+
+	return word
+
 
 def step_5a(word):
-  # TODO
-  return word
+	if measure(word[:-1]) > 1 and ends(word, "e"):
+		return replace(word, "e", "")
+
+	if measure(word[:-1]) == 1 and not ends_in_cvc(word[:-1]) and word[-1] == "e":
+		return replace(word, "e", "")
+	
+	return word
 
 def step_5b(word):
-  # TODO
-  return word
+	if ends_in_double_consonant(word) and ends(word, "l"):
+		if measure(word[:-1]) > 1:
+			return replace(word, "ll", "l")
+		else:
+			return word
+
+	return word
 
 def stem(word):
-  stem = step_1a(word)
-  stem = step_1b(stem)
-  stem = step_1c(stem)
-  stem = step_2(stem)
-  stem = step_3(stem)
-  stem = step_4(stem)
-  stem = step_5a(stem)
-  stem = step_5b(stem)
+	stem = step_1a(word)
+	stem = step_1b(stem)
+	stem = step_1c(stem)
+	stem = step_2(stem)
+	stem = step_3(stem)
+	stem = step_4(stem)
+	stem = step_5a(stem)
+	stem = step_5b(stem)
 
-  return stem
+	return stem
 
-result = [ { word : stem(word) } for word in tokenize("I agreed with the greatest minds of my generalization destroyed by caresses")]
+result = [{ word : stem(word)} for word in tokenize("I agreed with the greatest minds of my generalization destroyed by caresses ponies")]
 print(result)
