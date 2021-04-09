@@ -56,10 +56,17 @@ def ends(word, suffix):
 
 
 def step_1a(word):
-
   if word[-4:] == "sses":
-      return word[:-4] + "ss"
-
+   
+    return word[:-4] + "ss"
+  if word[-3:] == "ies":
+    return word[:-3] + "i"
+  
+  if word[-2:] == "ss":
+    return word[:-2] + "ss"
+  if word[-1:] == "s":
+    return word[:-1]
+ 
   return word
 
 def step_1b(word):
@@ -181,7 +188,7 @@ def step_4(word):
           else:
             return word
         return replace(word, suffix, replacement)
-    return word
+  return word
 
 def step_5a(word):
   if ends(word, "e"):
