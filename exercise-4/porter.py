@@ -58,15 +58,8 @@ def ends(word, suffix):
 def step_1a(word):
 
   if word[-4:] == "sses":
-    # remember, Porter algorithm matches
-    # the longest suffix in each step
-    # and then finishes the step
-    # without checking the other rules
-    return word[:-4] + "ss"
+      return word[:-4] + "ss"
 
-  # TODO: the rest is up to you!
-
-  # no rule matches
   return word
 
 def step_1b(word):
