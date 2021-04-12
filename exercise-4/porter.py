@@ -237,7 +237,5 @@ def stem(word):
 
   return stem
 
-result = [ { word : stem(word) } for word in tokenize("filing formative revival file revival rate adoption controll roll cease")]
+result = [ { word : stem(word) } for word in tokenize("I agreed with the greatest minds of my generalization destroyed by caresses")]
 print(result)
-print(measure("ceas"))
-print(measure("rat"))
