@@ -4,7 +4,11 @@
 
 ## Instructions
 
+<<<<<<< HEAD
 This `document` contains all sorts of violations of the above [CommonMark](https://commonmark.org/) specification.
+=======
+ ####  Instructions
+>>>>>>> 5a671866ed862b3530f5c8bad2d3e348c0dcb622
 
 ### Instructions
 
