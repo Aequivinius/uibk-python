@@ -178,7 +178,7 @@ def step_4(word):
       if ends(word, suffix):
           if measure(word[:-len(suffix)]) > 1:
               if suffix == "ion":
-                  if word[-len(suffix)-1] == "s" or word[-len(suffix)-1] == "t":
+                  if word[-4] == "s" or word[-4] == "t":
                       return replace(word, suffix, "")
                   else:
                       return word
