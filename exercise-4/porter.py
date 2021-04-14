@@ -1,5 +1,5 @@
 def tokenize(text):
-  return text.split()
+    return text.split()
 
 # call this using is_consonant(word, i)
 def is_consonant(word, index):
@@ -49,7 +49,7 @@ def ends_in_cvc(word):
 	return False
 
 def replace(word, suffix, replacement):
-  return word[:-len(suffix)] + replacement
+    return word[:-len(suffix)] + replacement
 
 def ends(word, suffix):
   return word[-len(suffix):] == suffix
@@ -58,16 +58,18 @@ def ends(word, suffix):
 def step_1a(word):
 
   if word[-4:] == "sses":
-    # remember, Porter algorithm matches
-    # the longest suffix in each step
-    # and then finishes the step
-    # without checking the other rules
     return word[:-4] + "ss"
 
-  # TODO: the rest is up to you!
+  if word[-3:] == "ies":
+      return word[:-3] + "i"
 
-  # no rule matches
-  return word
+  if word [-2:] == "ss":
+      return word[:-2] + "ss"
+
+  if word[-1:] == "s" :
+      return word[:-1] + ""
+  else:
+    return word
 
 def step_1b(word):
 
@@ -84,8 +86,11 @@ def step_1b(word):
     else:
       return word
 
-  # TODO
-
+  if ends(word, "ing"):
+      if contains_vowel(word[:-3]):
+          return replace(word, "ing", "")
+      else:
+          return word
   return word
 
 def step_1b_helper(word):
@@ -108,27 +113,122 @@ def step_1b_helper(word):
   return word
 
 def step_1c(word):
-  # TODO
+  if ends(word, "y"):
+      if contains_vowel(word[:-1]):
+          return replace(word, "y", "i")
+      else:
+          return word
   return word
 
 def step_2(word):
-  # TODO
+  if measure(word) > 0:
+    if ends(word, "ational"):
+      return replace(word, "ational", "ate")
+    if ends(word, "tional"):
+      return replace(word, "tional", "tion")
+    if ends(word, "enci"):
+      return replace(word, "enci", "ence")
+    if ends(word, "anci"):
+      return replace(word, "anci", "ance")
+    if ends(word, "izer"):
+      return replace(word, "izer", "ize")
+    if ends(word, "abli"):
+      return replace(word, "abli", "able")
+    if ends(word, "alli"):
+      return replace(word, "alli", "al")
+    if ends(word, "entli"):
+      return replace(word, "entli", "ent")
+    if ends(word, "eli"):
+      return replace(word, "eli", "e")
+    if ends(word, "ousli"):
+      return replace(word, "ously", "ous")
+    if ends(word, "ization"):
+      return replace(word, "ization", "ize")
+    if ends(word, "ation"):
+      return replace(word, "ation", "ate")
+    if ends(word, "ator"):
+      return replace(word, "ator", "ate")
+    if ends(word, "alism"):
+      return replace(word, "alism", "al")
+    if ends(word, "iveness"):
+      return replace(word, "iveness", "ive")
+    if ends(word, "fulness"):
+      return replace(word, "fulness", "ful")
+    if ends(word, "ousness"):
+      return replace(word, "ousness", "ous")
+    if ends(word, "aliti"):
+      return replace(word, "aliti", "al")
+    if ends(word, "iviti"):
+      return replace(word, "iviti", "ive")
+    if ends(word, "biliti"):
+      return replace(word, "biliti", "ble")
   return word
 
 def step_3(word):
-  # TODO
+  if measure(word) > 0:
+    if ends(word, "icate"):
+      return replace(word, "icate", "ic")
+    if ends(word, "ative"):
+      return replace(word, "ative", "")
+    if ends(word, "alize"):
+      return replace(word, "alize", "al")
+    if ends(word, "iciti"):
+      return replace(word, "iciti", "ic")
+    if ends(word, "ical"):
+      return replace(word, "ical", "ic")
+    if ends(word, "ful"):
+      return replace(word, "ful", "")
+    if ends(word, "ness"):
+      return replace(word, "ness", "")
   return word
 
 def step_4(word):
-  # TODO
+  endings = ["al",
+            "ance",
+            "ence",
+            "er",
+            "ic",
+            "able",
+            "ible",
+            "ant",
+            "ement",
+            "ment",
+            "ent",
+            "ou",
+            "ism",
+            "ate",
+            "iti",
+            "ous",
+            "ive",
+            "ize"]
+  for ending in endings:
+      if measure(word) > 1:
+        if ends(word, ending):
+            return replace(word, ending, "")
+  if ends(word, "ion"):
+      if word[:-3] == "t":
+          return replace(word, "ion", "")
+      if word[:-3] == "s":
+          return replace(word, "ion", "")
+
   return word
 
 def step_5a(word):
-  # TODO
+  if measure(word) > 1:
+      if ends(word, "e"):
+          return replace(word, "e", "")
+  if measure(word) == 1:
+      if ends(word, "e"):
+          if word[:-1] != "o":
+            return replace(word, "e", "")
   return word
 
 def step_5b(word):
-  # TODO
+  if measure(word) > 1:
+      if ends_in_double_consonant(word):
+          return replace(word, word[-1], "")
+  if ends(word, "i"):
+      return replace(word, "i", "y")
   return word
 
 def stem(word):
