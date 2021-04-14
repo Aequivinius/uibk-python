@@ -43,7 +43,7 @@ def ends_in_double_consonant(word):
 
 
 def ends_in_cvc(word):
-	if len(word) > 3:
+	if len(word) >= 3:
 		if is_consonant(word, len(word) - 3) and not is_consonant(word, len(word) - 2) and is_consonant(word, len(word) - 1) and word[-1] not in ['w', 'x', 'y']:
 			return True
 	return False
@@ -242,5 +242,6 @@ def stem(word):
 
   return stem
 
-result = [ { word : stem(word) } for word in tokenize("I agreed with the greatest minds of my generalization destroyed by caresses and swimming and hopping rate")]
+result = [ { word : stem(word) } for word in tokenize("I agreed with the greatest minds of my generalization destroyed by caresses")]
+
 print(result)
