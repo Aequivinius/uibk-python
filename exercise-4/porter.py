@@ -43,7 +43,7 @@ def ends_in_double_consonant(word):
 
 
 def ends_in_cvc(word):
-	if len(word) > 3:
+	if len(word) >= 3:
 		if is_consonant(word, len(word) - 3) and not is_consonant(word, len(word) - 2) and is_consonant(word, len(word) - 1) and word[-1] not in ['w', 'x', 'y']:
 			return True
 	return False
@@ -127,25 +127,25 @@ def step_1c(word):
 def step_2(word):
   
   suffixe = {"ational" : "ate",	
-	            "tional" : "tion",	
-	            "enci" : "ence",	
-	            "anci" : "ance",	
-	            "izer" : "ize",	
-	            "abli" : "able",	
-	            "alli" : "al",	
-	            "entli" : "ent",	
-	            "eli" : "e",	
-	            "ousli" : "ous",	
-	            "ization" : "ize",	
-	            "ation" : "ate",	
-	            "ator" : "ate",	
-	            "alsim" : "al",	
-	            "iveness" : "ive",	
-	            "fulness" : "ful",	
-	            "ousness" : "ous",	
-	            "aliti" : "al",	
-	            "iviti" : "ive",	
-	            "biliti" : "ble" }	
+	           "tional" : "tion",	
+	           "enci" : "ence",	
+	           "anci" : "ance",	
+	           "izer" : "ize",	
+	           "abli" : "able",	
+	           "alli" : "al",	
+	           "entli" : "ent",	
+	           "eli" : "e",	
+	           "ousli" : "ous",	
+	           "ization" : "ize",	
+	           "ation" : "ate",	
+	           "ator" : "ate",	
+	           "alsim" : "al",	
+	           "iveness" : "ive",	
+	           "fulness" : "ful",	
+	           "ousness" : "ous",	
+	           "aliti" : "al",	
+	           "iviti" : "ive",	
+	           "biliti" : "ble" }	
   for suf, repl in suffixe.items():	
     if measure(word[:-len(suf)]) > 0:	
       if ends(word,suf):	
@@ -155,12 +155,12 @@ def step_2(word):
 def step_3(word):
   
   suffixe = {"icate" : "ic",	
-	            "ative" : "",	
-	            "alize" : "al",	
-	            "iciti" : "ic",	
-	            "ical" : "ic",	
-	            "ful" : "",	
-              "ness" : "" }	
+	           "ative" : "",	
+	           "alize" : "al",	
+	           "iciti" : "ic",	
+	           "ical" : "ic",	
+	           "ful" : "",	
+             "ness" : "" }	
   for suf, repl in suffixe.items():	
     if measure(word[:-len(suf)]) > 0:	
       if ends(word, suf):	
@@ -170,24 +170,24 @@ def step_3(word):
 def step_4(word):
 
   suffixe = {"al" : "",	
-	            "ance" : "",	
-	            "ence" : "",	
-	            "er" : "",	
-	            "ic" : "",	
-	            "able" : "",	
-	            "ible" : "",	
-	            "ant" : "",	
-	            "ement" : "",	
-	            "ment" : "",	
-	            "ent" : "",	
-	            "ion" : "",	
-	            "ou" : "",	
-	            "ism" : "",	
-	            "ate" : "",	
-	            "iti" : "",	
-	            "ous" : "",	
-	            "ive" : "",	
-              "ize" : "" }	
+	           "ance" : "",	
+	           "ence" : "",	
+	           "er" : "",	
+	           "ic" : "",	
+	           "able" : "",	
+	           "ible" : "",	
+	           "ant" : "",	
+	           "ement" : "",	
+	           "ment" : "",	
+	           "ent" : "",	
+	           "ion" : "",	
+	           "ou" : "",	
+	           "ism" : "",	
+	           "ate" : "",	
+	           "iti" : "",	
+	           "ous" : "",	
+	           "ive" : "",	
+             "ize" : "" }	
   for suf, repl in suffixe.items():	
     if measure(word[:-len(suf)]) > 1:	
       if ends(word, suf):	
