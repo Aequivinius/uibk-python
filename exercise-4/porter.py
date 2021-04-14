@@ -88,9 +88,9 @@ def step_1b(word):
 
   if ends(word, "ing"):
       if contains_vowel(word[:-3]):
-          return replace(word, "ing", "")
-      else:
-          return word
+        word = replace(word, "ing", "")
+        if ends_in_double_consonant(word):
+          word = replace(word, word[-1], "")
   return word
 
 def step_1b_helper(word):
@@ -217,15 +217,14 @@ def step_5a(word):
   if measure(word) > 1:
       if ends(word, "e"):
           return replace(word, "e", "")
-  if measure(word) == 1:
+  if measure(word) == 1 and ends_in_cvc(word):
       if ends(word, "e"):
-          if word[:-1] != "o":
-            return replace(word, "e", "")
+          return replace(word, "e", "")
   return word
 
 def step_5b(word):
   if measure(word) > 1:
-      if ends_in_double_consonant(word):
+      if ends_in_double_consonant(word) and word[:-1] == "l":
           return replace(word, word[-1], "")
   if ends(word, "i"):
       return replace(word, "i", "y")
@@ -243,5 +242,5 @@ def stem(word):
 
   return stem
 
-result = [ { word : stem(word) } for word in tokenize("I agreed with the greatest minds of my generalization destroyed by caresses")]
+result = [ { word : stem(word) } for word in tokenize("I agreed with the greatest minds of my generalization destroyed by caresses and swimming and hopping rate")]
 print(result)
