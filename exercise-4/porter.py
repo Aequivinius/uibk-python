@@ -182,8 +182,8 @@ def step_4(word):
                       return replace(word, suffix, "")
                   else:
                       return word
-          else:
-              return word
+              else:
+                  return replace(word, suffix, "")
 
   return word
 
