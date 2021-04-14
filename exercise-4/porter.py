@@ -182,8 +182,8 @@ def step_4(word):
                       return replace(word, suffix, "")
                   else:
                       return word
-      else:
-          return replace(word, suffix, "")
+          else:
+              return replace(word, suffix, "")
 
   return word
 
@@ -191,6 +191,8 @@ def step_5a(word):
   if ends(word, "e"):
       if measure(word[:-1]) > 1 and not ends_in_cvc(word):
           return replace(word, "e", "")
+      else:
+        return word
 
   return word
 
@@ -198,7 +200,7 @@ def step_5b(word):
   if ends_in_double_consonant(word):
       if measure(word[:-1]) > 1:
           if ends(word, "ll"):
-              return replace(word, "ll", "ll")
+              return replace(word, "ll", "l")
 
   return word
 
