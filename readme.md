@@ -11,11 +11,13 @@ There will be 13 exercises, which can be found on  [the course repository on git
 * exercise-3 Data types: `string` and `list`
 * exercise-4 `dict`
 * exercise-5 `comprehension`s, reading and writing files, `.csv`
-* exercise-6 pep8, good documentation, good coding, linting, `regex`, user arguments, `import csv`
-* exercise-7 virtual environments: `venv`, `pip` and `poetry`
-* exercise-8 jupyter
-* exercise-9 pandas
+* exercise-6 `import` and arguments
+* exercise-7 Good practises (pep8, good documentation, good coding, linting, `regex`)
+* exercise-8 pandas and  virtual environments: `venv`, `pip` and `poetry`
+
+* exercise-9 jupyter?
 * exercise-10 visualisation
+
 * exercise-11 NLP project I: normalisation, `nltk`
 * exercise-12 NLP project II: word frequencies, palindromes 2?, `spaCy`
 * exercise-13 NLP project III: miniature project
