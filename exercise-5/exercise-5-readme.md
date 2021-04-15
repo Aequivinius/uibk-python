@@ -86,7 +86,11 @@ gretel,10,6
 
 ⚠️ Header line is optional.
 
-* A variation is the *tab separated format*, `.tsv`, which is better suited for natural language texts.
+* A variation is the *tab separated format*, `.tsv`, which is better suited for natural language texts. In this case, the *delimiter* is set to the *tab*, or `\t` in `python`. This will be useful for exercise-6.
+
+## `cd` and `..`
+
+When working with replit, it can make things easier if you change the working directory of your console to the current exercise: use `cd exercise-5` for example, to change into the directory of exercise-5 - then you can call your programms, such as `frequencies.py` without having to say in which directory they lie (just use `python frequencies.py`). Same goes for `pytest`, which looks for tests just in the current directory and its subdirectories - if you've `cd`ed into your exercise directory before running `pytest`, it'll just run the tests for the current exercise. To navigate up one directory, use `cd ..`.
 
 ## exercise-5
 
