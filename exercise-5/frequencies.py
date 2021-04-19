@@ -49,14 +49,23 @@ def traverse_directory(path):
 # reads its contents and tokenizes them. Returns
 # a list of normalized tokens.
 def tokenize_file(path):
+  f = open(path)
+  content = f.read()
   # TODO: open and read file contents into the string tokens
+  tokens = content.split()
   # TODO: then tokenize and normalize the string:
   #  1. split on whitespace
   #  2. lowercase it
   #  3. strip whitespace
   #  4. strip (that is, remove at beginning and end) 
   # special characters such as , . ! ? [ ] ( ) = - ...
-  #  5. check that there are no empty strings in the list
+  cleared_tokens = [token.lower().strip(",.!?[]()=-...") for token in tokens]
+  for token in cleared_tokens:
+    if len == [0]:
+  #  5. check that there are no empty strings in the list      
+      cleared_tokens.remove(tokens)
+  return(cleared_tokens)
+
   tokens = ""
   normalized_tokens = []
 
@@ -70,12 +79,13 @@ def compute_counts(pathlist):
   counts = {}
   for path in pathlist:
     tokens = tokenize_file(path)
-    # TODO: populate the counts dictionary
+    for token in tokens:
+      counts[token] = counts.get(token, 0) + 1
+  return counts
+# TODO: populate the counts dictionary
     # Check if a token is already in it. If so, add
     # 1 to its count; if not, create a new entry by using
     # counts[word] = 1
-  return counts
-
 
 # Dictionaries are great, but they have no order. 
 # { key1 : value1, key2 : value2 } is the same as 
@@ -98,7 +108,16 @@ def write_frequencies(frequencies, path):
   # then for every item in the list write a new line
   # the format of the .csv file is as follows:
   # rank,token,count,frequency
+  sum_words = 0
+  rank = 0
+  for l in frequencies:
+    sum_words = sum_words + l[1]
   
+  with open("path", "w") as f:
+    for l in frequencies:
+      rank = rank + 1
+      f.write(f"{rank}, {l[0]}, {l[1]}, {l[1]/sum_words}\n")
+      f.write(f"{rank},{l[0]},{l[1]},{l[1]/sum_words}\n")
   # The rank runs starts at 1, so the most frequent word
   # has rank 1; the second most frequent 2 etc. 
   # the frequency is calculated by dividing the count by the
@@ -106,9 +125,8 @@ def write_frequencies(frequencies, path):
   # handy in this case.
   return
 
-# TODO: You can comment in the following lines to check
-# your work. When you're finished, it 
-#files = traverse_directory('corpus')
-#counts = compute_counts(files)
-#sorted_counts = sort_counts(counts)
-#write_frequencies(sorted_counts, 'frequencies.csv')
+# TODO: You can comment in the following lines to check your work. When you're finished, it 
+files = traverse_directory('corpus')
+counts = compute_counts(files)
+sorted_counts = sort_counts(counts)
+write_frequencies(sorted_counts, 'frequencies.csv')
