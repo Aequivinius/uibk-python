@@ -125,7 +125,7 @@ def write_frequencies(frequencies, path):
   # handy in this case.
   return
 
-# TODO: You can comment in the following lines to check your work. When you're finished, it 
+#TODO: You can comment in the following lines to check your work. When you're finished, it 
 #files = traverse_directory('corpus')
 #counts = compute_counts(files)
 #sorted_counts = sort_counts(counts)
