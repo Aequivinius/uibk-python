@@ -84,8 +84,12 @@ def step_1b(word):
     else:
       return word
 
-  # TODO
-
+  if ends(word, "ing"):
+    if contains_vowel(word[:-3]):
+      stem = replace(word, "ing", "")
+      return step_1b_helper(stem)
+    else:
+      return word
   return word
 
 def step_1b_helper(word):
@@ -108,11 +112,14 @@ def step_1b_helper(word):
   return word
 
 def step_1c(word):
-  # TODO
+  if word[-1] == "y" and contains_vowel(word[:-1]):
+    return replace(word, "y", "i")
+  else:
+    return word
   return word
 
 def step_2(word):
-  # TODO
+  
   return word
 
 def step_3(word):
