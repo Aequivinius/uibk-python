@@ -96,7 +96,7 @@ def write_frequencies(frequencies, path):
   with open("path", "w") as f:
     for item in frequencies:
       rank = rank + 1
-  f.write(f"{rank}, {item[0]}, {item[1]}, {item[1]/sum})
+  f.write(f"{rank}, {item[0]}, {item[1]}, {item[1]/sum}")
   return
 
 # TODO: You can comment in the following lines to check
