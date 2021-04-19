@@ -69,9 +69,9 @@ def step_1a(word):
   elif word[-3:] == "ies":
     return word[-3:] + "i"
   elif word[-2:] == "ss":
-    return word[-2] == "ss"
+    return word[-2] + "ss"
   elif word[-1:] == "s":
-    return word == word[:-1]
+    return word[:-1]
   else:
   # no rule matches
     return word
@@ -121,7 +121,7 @@ def step_1b_helper(word):
 
 def step_1c(word):
   # TODO
-  if contains_vowel(word[:-1]) and word[:-1] == "y":
+  if contains_vowel(word[:-1]) and word[-1] == "y":
     return replace(word, "y", "i")
   return word
 
