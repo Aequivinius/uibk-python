@@ -61,15 +61,10 @@ def tokenize_file(path):
   # special characters such as , . ! ? [ ] ( ) = - ...
   cleared_tokens = [token.lower().strip(",.!?[]()=-...") for token in tokens]
   for token in cleared_tokens:
-    if len == [0]:
+    if len(token) == 0:
   #  5. check that there are no empty strings in the list      
-      cleared_tokens.remove(tokens)
-  return(cleared_tokens)
-
-  tokens = ""
-  normalized_tokens = []
-
-  return normalized_tokens
+      cleared_tokens.remove(token)
+  return cleared_tokens
 
 # this function takes a list of paths, and for every
 # file it calls tokenize_file. Then it populates a 
@@ -112,12 +107,11 @@ def write_frequencies(frequencies, path):
   rank = 0
   for l in frequencies:
     sum_words = sum_words + l[1]
-  
   with open("path", "w") as f:
     for l in frequencies:
       rank = rank + 1
-      f.write(f"{rank}, {l[0]}, {l[1]}, {l[1]/sum_words}\n")
-      f.write(f"{rank},{l[0]},{l[1]},{l[1]/sum_words}\n")
+      f.write(f'{rank}, {l[0]}, {l[1]}, {l[1]/sum_words}\n')
+      f.write(f'{rank},{l[0]},{l[1]},{l[1]/sum_words}\n')
   # The rank runs starts at 1, so the most frequent word
   # has rank 1; the second most frequent 2 etc. 
   # the frequency is calculated by dividing the count by the
