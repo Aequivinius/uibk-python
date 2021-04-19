@@ -110,7 +110,6 @@ def write_frequencies(frequencies, path):
   with open("path", "w") as f:
     for l in frequencies:
       rank = rank + 1
-      f.write(f'{rank}, {l[0]}, {l[1]}, {l[1]/sum_words}\n')
       f.write(f'{rank},{l[0]},{l[1]},{l[1]/sum_words}\n')
   # The rank runs starts at 1, so the most frequent word
   # has rank 1; the second most frequent 2 etc. 
