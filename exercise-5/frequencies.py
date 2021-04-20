@@ -45,16 +45,17 @@ def sort_counts(counts):
 def write_frequencies(list, path):
   rank = 0
   sum = 0
+  sum = 0 #NOSONAR
   all_data = ""
 
-  for object in list[:4]:
+  for object in list:
     sum += int(object[1])
   
   print(sum)
   
   for object in list:
     rank += 1
-    token = object[0]
+    token = object[0] #redundant variables, I know
     count = object[1]
     frequency = float(object[1]) / (sum)
     data_line = str(rank) + "," + str(token) + "," + str(count) + "," + str(frequency) + "\n"
