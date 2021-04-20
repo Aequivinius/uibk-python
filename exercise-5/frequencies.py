@@ -49,17 +49,15 @@ def traverse_directory(path):
 # reads its contents and tokenizes them. Returns
 # a list of normalized tokens.
 def tokenize_file(path):
-  # TODO: open and read file contents into the string tokens
-  # TODO: then tokenize and normalize the string:
-  #  1. split on whitespace
-  #  2. lowercase it
-  #  3. strip whitespace
-  #  4. strip (that is, remove at beginning and end) 
-  # special characters such as , . ! ? [ ] ( ) = - ...
-  #  5. check that there are no empty strings in the list
-  tokens = ""
-  normalized_tokens = []
-
+  f = open(path)
+  content = f.read()
+  tokens = content.split()
+  normalized_tokens = [token.lower().strip(",.!?[]()=-...") for token in tokens]
+  for token in normalized_tokens:
+    if len(token) == 0:
+      normalized_tokens.remove(token)
+#tokens = ""
+#normalized_tokens = []
   return normalized_tokens
 
 # this function takes a list of paths, and for every
@@ -70,10 +68,7 @@ def compute_counts(pathlist):
   counts = {}
   for path in pathlist:
     tokens = tokenize_file(path)
-    # TODO: populate the counts dictionary
-    # Check if a token is already in it. If so, add
-    # 1 to its count; if not, create a new entry by using
-    # counts[word] = 1
+    for token in tokens: counts[token] = counts.get(token, 0) + 1
   return counts
 
 
@@ -94,16 +89,14 @@ def sort_counts(counts):
 # sort_counts(), opens a new file handle and
 # writes the frequencies in csv format to that file
 def write_frequencies(frequencies, path):
-  # TODO: open the file at path in write mode
-  # then for every item in the list write a new line
-  # the format of the .csv file is as follows:
-  # rank,token,count,frequency
-  
-  # The rank runs starts at 1, so the most frequent word
-  # has rank 1; the second most frequent 2 etc. 
-  # the frequency is calculated by dividing the count by the
-  # sum of all counts. sum([list of numbers]) could be
-  # handy in this case.
+  sum = 0
+  rank = 0
+  for lex in frequencies:
+    sum = sum + lex[1]
+  with open("path", "w") as f:
+    for lex in frequencies:
+      rank = rank + 1
+    f.write(f"{rank}, {lex[0]}, {lex[1]}, {lex[1]/sum}\n")
   return
 
 # TODO: You can comment in the following lines to check
