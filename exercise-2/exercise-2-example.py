@@ -8,7 +8,7 @@
 # executes the line. For example, the following line prints to the console:
 
 print("Hello World")
-print("-----------")
+print("Hey there")
 
 # Feel free to change replace "Hello World" with something else.
 
