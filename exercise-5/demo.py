@@ -9,7 +9,7 @@ w = open('demo.txt','w')
 w.write("If the shadows have offended")
 w.close() # to show why we need to close
 
-with open('demo.txt','w') as f:
+with open('demo1.txt','w') as f:
   f.write('Se tu non vi pensi,\nhai persi li sensi')
 
 composers = { 'brahms' : 'german', 'mozart' : 'austrian', 'chopin' : 'polish'}

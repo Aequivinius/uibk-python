@@ -50,16 +50,29 @@ def traverse_directory(path):
 # a list of normalized tokens.
 def tokenize_file(path):
   # TODO: open and read file contents into the string tokens
-  # TODO: then tokenize and normalize the string:
-  #  1. split on whitespace
-  #  2. lowercase it
-  #  3. strip whitespace
-  #  4. strip (that is, remove at beginning and end) 
-  # special characters such as , . ! ? [ ] ( ) = - ...
-  #  5. check that there are no empty strings in the list
-  tokens = ""
-  normalized_tokens = []
+  f = open(path)
+  tokens = f.read()
 
+  # TODO: tokenize and normalize the string:
+  # special characters such as , . ! ? [ ] ( ) = - ...
+  punctuation = "!@#$%^&*()_+<>?:.,;?-[]=/'"  #punctuation for comparison and removal
+  for i in tokens: #compares if charachters are punctuation
+    if i in punctuation:
+      tokens = tokens.replace(i, "") # if yes it replaces with empty string = get erraced
+    if i =='\n':
+      tokens = tokens.replace(i, " ")
+
+  # lowercase it and strip (that is, remove at beginning and end)
+  tokens = tokens.lower().strip()
+
+  # split on whitespace
+  tokens = tokens.split(" ")  
+  #print(type(tokens))
+  # strip whitespace
+  
+  #  5. check that there are no empty strings in the list  
+  normalized_tokens = [token for token in tokens if token != ""]
+  #print(normalized_tokens)
   return normalized_tokens
 
 # this function takes a list of paths, and for every
@@ -70,10 +83,16 @@ def compute_counts(pathlist):
   counts = {}
   for path in pathlist:
     tokens = tokenize_file(path)
+    for token in tokens:
+      if token in counts:
+        counts[token] += 1
+      else:
+        counts[token] = 1
     # TODO: populate the counts dictionary
     # Check if a token is already in it. If so, add
     # 1 to its count; if not, create a new entry by using
     # counts[word] = 1
+  #print(counts)
   return counts
 
 
@@ -87,6 +106,7 @@ def compute_counts(pathlist):
 # [ [ word1, count1 ], [ word2, count2 ], ... ]
 def sort_counts(counts):
   sorted_tuples = sorted(counts.items(), key=lambda item: item[1], reverse=True)
+  #print(sorted_tuples)
   return sorted_tuples
 
 
@@ -95,7 +115,16 @@ def sort_counts(counts):
 # writes the frequencies in csv format to that file
 def write_frequencies(frequencies, path):
   # TODO: open the file at path in write mode
-  # then for every item in the list write a new line
+  with open(path, 'w') as f:
+    # then for every item in the list write a new line
+    #[f.write(str(token).replace("(", "").replace(")", "") + '\n') for token in frequencies]
+    rank = 0
+    for token in frequencies:
+      f.write(str(rank+1)+ "," + str(token).replace("(", "").replace(")", "").replace("[", "").replace("]", "").replace("'", "").replace(" ", "") + "," + str(round(token[1]/sum(c[1] for c in frequencies), 3)) + '\n')
+      rank += 1
+    
+
+  
   # the format of the .csv file is as follows:
   # rank,token,count,frequency
   
@@ -108,7 +137,10 @@ def write_frequencies(frequencies, path):
 
 # TODO: You can comment in the following lines to check
 # your work. When you're finished, it 
-#files = traverse_directory('corpus')
-#counts = compute_counts(files)
-#sorted_counts = sort_counts(counts)
-#write_frequencies(sorted_counts, 'frequencies.csv')
+files = traverse_directory('corpus')
+counts = compute_counts(files)
+sorted_counts = sort_counts(counts)
+write_frequencies(sorted_counts, 'frequencies.csv')
+#tokenize_file('demo.txt')
+#sort_counts(compute_counts(['demo.txt', 'demo1.txt']))
+#write_frequencies(sort_counts(compute_counts(['demo.txt', 'demo1.txt'])), 'frequencies.csv')
