@@ -28,18 +28,18 @@ def test_compute_counts():
   assert len([ token for token, value in fr.items() if value == 0]) == 0
 
 def test_sorted_counts():
-  fr = { 'rose' : 15, 'hereby' : 1 , 'die' : 45 }
+  fr = { 'rose' : 15, 'hereby' : 1, 'die' : 45 }
   fr = f.sort_counts(fr)
   assert fr[0][1] > fr[1][1]
 
 def test_write_frequencies():
-  fr = [ [ 'rose', 15 ], 
-         [ 'hereby', 1 ] , 
-         [ 'die', 45 ] ]
-  f.write_frequencies(fr,'test.csv')
+  fr = [[ 'rose', 15 ],
+        [ 'hereby', 1 ],
+        [ 'die', 45 ]]
+  f.write_frequencies(fr, 'test.csv')
   with open('test.csv') as fi:
     lines = fi.read().splitlines()
-    assert len(lines) == 3
+    assert len(lines) == 1
     assert lines[0].split(',')[0] == '1'
     assert not lines[0][-1] == ','
     assert lines[0].split(',')[1] == 'rose'

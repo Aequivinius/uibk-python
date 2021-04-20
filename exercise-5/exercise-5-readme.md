@@ -21,7 +21,7 @@ tokens = ["Katze",
 
 ⚠️ The basic syntax for a `comprehension` is `new_list = [ some_action(item) for item in list]`, which performs `some_action()` on every `item` in `list`, and returns a new `list` with the *changed* `item`s. 
 
-* We can also add an `if` statement, which checks every `item` in this way: `[ item for item in list if len(item) > 3]`, which will return a new `list` that only contains `item`s are longer than 3 characters. This is useful for filtering lists!
+* We can also add an `if` statement, which checks every `item` in this way: `[ item for item in list if len(item) >=3]`, which will return a new `list` that only contains `item`s are longer than 3 characters. This is useful for filtering lists!
 
 * Or, we could get a `list` of `dict`s, where every `dict` has a `token` and a `stem` element, given a `stem()` and a `tokenize()`function: `[ { word : stem(word) } for word in tokenize(text)]`
 
