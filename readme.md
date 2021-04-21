@@ -9,16 +9,18 @@ There will be 13 exercises, which can be found on  [the course repository on git
 * exercise-1 Introduction to `git`
 * exercise-2 Introduction and installation of `python`
 * exercise-3 Data types: `string` and `list`
-* exercise-4 More data types: `dict`, `comprehension`
-* exercise-5 reading and writing files, `.csv`
-* exercise-6 pep8, good documentation, good coding, linting, `regex`?
-* exercise-7 virtual environments: `venv`, `pip` and `poetry`?
-* exercise-8 jupyter
-* exercise-9 pandas
+* exercise-4 `dict`
+* exercise-5 `comprehension`s, reading and writing files, `.csv`
+* exercise-6 `import` and arguments
+* exercise-7 Good practises (pep8, good documentation, good coding, linting, `regex`)
+* exercise-8 pandas and  virtual environments: `venv`, `pip` and `poetry`
+
+* exercise-9 jupyter?
 * exercise-10 visualisation
-* exercise-11 NLP project I: normalisation, `spaCy`
-* exercise-12 NLP project II: word frequencies, palindromes 2?
-* exercise-13 NLP project III: own miniature project
+
+* exercise-11 NLP project I: normalisation, `nltk`
+* exercise-12 NLP project II: word frequencies, palindromes 2?, `spaCy`
+* exercise-13 NLP project III: miniature project
 
 ## How to use `git` for this course
 
