@@ -62,12 +62,12 @@ def compute_counts(pathlist):
         counts[token] = counts[token] + 1
       else:
         counts[token] = 1 
+        #print(counts)
     # TODO: populate the counts dictionary
     # Check if a token is already in it. If so, add
     # 1 to its count; if not, create a new entry by using
     # counts[word] = 1
   return counts
-
 
 # Dictionaries are great, but they have no order. 
 # { key1 : value1, key2 : value2 } is the same as 
@@ -79,6 +79,7 @@ def compute_counts(pathlist):
 # [ [ word1, count1 ], [ word2, count2 ], ... ]
 def sort_counts(counts):
   sorted_tuples = sorted(counts.items(), key=lambda item: item[1], reverse=True)
+  #print(sorted_tuples)
   return sorted_tuples
 
 
@@ -92,10 +93,9 @@ def write_frequencies(frequencies, path):
     for word_type in frequencies:
       sum = sum + word_type[1]
   # TODO: open the file at path in write mode
-  
     for word_type in frequencies:
       rank = rank + 1
-      f.write(f"{rank}, {word_type[0]}, {word_type[1]}, {word_type[1]/sum}\n")
+      f.write(str(rank) + "," + str(word_type[0]) + "," + str(word_type[1]) + "," + str(word_type[1]/sum) + "\n") 
 
 
 
