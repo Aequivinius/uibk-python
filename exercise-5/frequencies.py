@@ -3,12 +3,6 @@ import os
 # of all the .txt files that lie within it. 
 def traverse_directory(path):
   return [os.path.join(path, f) for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
-  
-  # A comprehension! How beautiful! How pythonic!
-  # A longer way to write this follows below.
-  # Note how this part of the code is not executed
-  # because a function stops when it hits a return
-  # statement just like the one above.
   onlyfiles = []
   files_and_directories = os.listdir(path) 
   # Lists all the contents of the path, files and
@@ -33,8 +27,6 @@ def traverse_directory(path):
     # This is why we need modules, to differentiate
     # different methods that have the same name.
     if os.path.isfile(fpath):
-      # Check if the path points to a file or 
-      # a directory.
       onlyfiles.add(fpath)
 
 
@@ -42,20 +34,17 @@ def traverse_directory(path):
 # reads its contents and tokenizes them. Returns
 # a list of normalized tokens.
 def tokenize_file(path):
-  # TODO: open and read file contents into the string tokens
-    f = open(path)
-    content = f.read()
-    tokens = content.split()
-    tokens = tokens.lower()
-    normalized_tokens=[token.strip("()[]!#'.,;:<>?+_=-'@^&*") for token in tokens]
+  f = open(path)
+  content = f.read()
+  tokens = content.split()
+  normalized_tokens = [token.lower().strip("()[]!#'.,;:<>?+_=-'@^&*") for token in tokens]
 #for token in tokens:
       #tokens.strip(",.!?[]()=-/\/") = normalized_tokens
     #normalized_tokens = [token.strip(",.!?[]()=-...") for token in tokens]
-    for token in normalized_tokens:
-        if len(token) == 0:
-            normalized_tokens.remove(token)
-    return normalized_tokens
-
+  for token in normalized_tokens:
+      if len(token) == 0:
+          normalized_tokens.remove(token)
+  return normalized_tokens
 
 
 ##return normalized_tokens
