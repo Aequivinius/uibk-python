@@ -115,7 +115,7 @@ def write_frequencies(frequencies, path):
     rank = 1
     for token in frequencies:
         output = ""
-        output += str(rank) + "\t" + token[0] + "\t" + str(token[1]) + "\t" + str(token[1]/sum_words) + "\n"
+        output += str(rank) + "," + token[0] +"," + str(token[1]) + "," + str(token[1]/sum_words) + "\n"
         f.write(output)
         rank += 1
 
