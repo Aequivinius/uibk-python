@@ -5,7 +5,7 @@
 # our code by using a dot after their name, such
 # as os.listdir() (see below)
 import os
-
+import csv
 # this function takes a path and returns a list
 # of all the .txt files that lie within it.
 def traverse_directory(path):
