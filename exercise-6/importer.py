@@ -1,2 +1,0 @@
-import bad_importee
-import good_importee
