@@ -1,11 +1,4 @@
-# these import statements give us access to
-# collections of code written for specific
-# purposes that not every python programm will
-# need. We can use the functions they contain in
-# our code by using a dot after their name, such
-# as os.listdir() (see below)
 import os
-
 # this function takes a path and returns a list
 # of all the .txt files that lie within it. 
 def traverse_directory(path):
@@ -50,17 +43,22 @@ def traverse_directory(path):
 # a list of normalized tokens.
 def tokenize_file(path):
   # TODO: open and read file contents into the string tokens
-  # TODO: then tokenize and normalize the string:
-  #  1. split on whitespace
-  #  2. lowercase it
-  #  3. strip whitespace
-  #  4. strip (that is, remove at beginning and end) 
-  # special characters such as , . ! ? [ ] ( ) = - ...
-  #  5. check that there are no empty strings in the list
-  tokens = ""
-  normalized_tokens = []
+    f = open(path)
+    content = f.read()
+    tokens = content.split()
+    tokens = tokens.lower()
+    normalized_tokens=[token.strip("()[]!#'.,;:<>?+_=-'@^&*") for token in tokens]
+#for token in tokens:
+      #tokens.strip(",.!?[]()=-/\/") = normalized_tokens
+    #normalized_tokens = [token.strip(",.!?[]()=-...") for token in tokens]
+    for token in normalized_tokens:
+        if len(token) == 0:
+            normalized_tokens.remove(token)
+    return normalized_tokens
 
-  return normalized_tokens
+
+
+##return normalized_tokens
 
 # this function takes a list of paths, and for every
 # file it calls tokenize_file. Then it populates a 
@@ -70,6 +68,11 @@ def compute_counts(pathlist):
   counts = {}
   for path in pathlist:
     tokens = tokenize_file(path)
+    for token in tokens:
+      if token in counts:
+        counts[token] = counts[token] + 1
+      else:
+        counts[token] = 1 
     # TODO: populate the counts dictionary
     # Check if a token is already in it. If so, add
     # 1 to its count; if not, create a new entry by using
@@ -94,7 +97,19 @@ def sort_counts(counts):
 # sort_counts(), opens a new file handle and
 # writes the frequencies in csv format to that file
 def write_frequencies(frequencies, path):
+  rank = 0
+  sum = 0
+  with open(path, 'w') as f:
+    for word_type in frequencies:
+      sum = sum + word_type[1]
   # TODO: open the file at path in write mode
+  
+    for word_type in frequencies:
+      rank = rank + 1
+      f.write(f"{rank}, {word_type[0]}, {word_type[1]}, {word_type[1]/sum}\n")
+
+
+
   # then for every item in the list write a new line
   # the format of the .csv file is as follows:
   # rank,token,count,frequency
@@ -112,3 +127,5 @@ def write_frequencies(frequencies, path):
 #counts = compute_counts(files)
 #sorted_counts = sort_counts(counts)
 #write_frequencies(sorted_counts, 'frequencies.csv')
+
+
