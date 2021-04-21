@@ -57,8 +57,13 @@ def tokenize_file(path):
   #  4. strip (that is, remove at beginning and end) 
   # special characters such as , . ! ? [ ] ( ) = - ...
   #  5. check that there are no empty strings in the list
-  tokens = ""
-  normalized_tokens = []
+  f = open(path)
+  content = f.read()
+  tokens = content.split()
+  normalized_tokens = [token.lower().strip(",.!?[]()=-") for token in tokens]
+  for token in normalized_tokens:
+    if len(token) == 0:
+      normalized_tokens.remove(token)
 
   return normalized_tokens
 
@@ -74,6 +79,12 @@ def compute_counts(pathlist):
     # Check if a token is already in it. If so, add
     # 1 to its count; if not, create a new entry by using
     # counts[word] = 1
+    for token in tokens:
+      if token in counts:
+        counts[token] = counts[token] + 1
+      else:
+        counts[token] = 1 
+  
   return counts
 
 
@@ -104,11 +115,19 @@ def write_frequencies(frequencies, path):
   # the frequency is calculated by dividing the count by the
   # sum of all counts. sum([list of numbers]) could be
   # handy in this case.
+  rank = 0
+  s = 0
+  for t in frequencies:
+    s += t[1]
+  with open(path, 'w') as f:
+    for t in frequencies:
+      rank += 1
+      f.write(str(rank) + "," + str(t[0]) + "," + str(t[1]) + "," + str(t[1]/s) + "\n") 
   return
 
 # TODO: You can comment in the following lines to check
 # your work. When you're finished, it 
-#files = traverse_directory('corpus')
-#counts = compute_counts(files)
-#sorted_counts = sort_counts(counts)
-#write_frequencies(sorted_counts, 'frequencies.csv')
+files = traverse_directory('corpus')
+counts = compute_counts(files)
+sorted_counts = sort_counts(counts)
+write_frequencies(sorted_counts, 'frequencies.csv')
