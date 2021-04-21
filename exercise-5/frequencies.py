@@ -5,7 +5,7 @@
 # our code by using a dot after their name, such
 # as os.listdir() (see below)
 import os
-import csv
+
 # this function takes a path and returns a list
 # of all the .txt files that lie within it.
 def traverse_directory(path):
@@ -114,9 +114,7 @@ def write_frequencies(frequencies, path):
     with open(path, 'w') as f:
         rank = 1
         for token in frequencies:
-            output = ""
-            output += str(rank) + "," + token[0] +"," + str(token[1]) + "," + str(token[1]/sum_words) + "\n"
-            f.write(output)
+            f.write(str(rank) + "," + token[0] +"," + str(token[1]) + "," + str(token[1]/sum_words) + "\n")
             rank += 1
 
 
@@ -137,3 +135,7 @@ files = traverse_directory('corpus')
 counts = compute_counts(files)
 sorted_counts = sort_counts(counts)
 write_frequencies(sorted_counts, 'frequencies.csv')
+
+
+
+
