@@ -116,6 +116,7 @@ def write_frequencies(frequencies, path):
         for token in frequencies:
             f.write(str(rank) + "," + token[0] +"," + str(token[1]) + "," + str(token[1]/sum_words) + "\n")
             rank += 1
+    return
 
 
   # TODO: open the file at path in write mode
