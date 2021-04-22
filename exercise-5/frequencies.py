@@ -50,6 +50,8 @@ def traverse_directory(path):
 # a list of normalized tokens.
 def tokenize_file(path):
   # TODO: open and read file contents into the string tokens
+  f = open(path)
+  contents = f.read()
   # TODO: then tokenize and normalize the string:
   #  1. split on whitespace
   #  2. lowercase it
@@ -57,10 +59,11 @@ def tokenize_file(path):
   #  4. strip (that is, remove at beginning and end) 
   # special characters such as , . ! ? [ ] ( ) = - ...
   #  5. check that there are no empty strings in the list
-  tokens = ""
-  normalized_tokens = []
-
+  tokens = contents.split()
+  stripped_tokens = [token.lower().strip(",;.!?[]()=+-#*&") for token in tokens]
+  normalized_tokens = [token for token in stripped_tokens if token != ""]
   return normalized_tokens
+
 
 # this function takes a list of paths, and for every
 # file it calls tokenize_file. Then it populates a 
@@ -74,6 +77,11 @@ def compute_counts(pathlist):
     # Check if a token is already in it. If so, add
     # 1 to its count; if not, create a new entry by using
     # counts[word] = 1
+    for word in tokens:
+      if word in counts:
+        counts[word] += 1
+      else:
+        counts[word] = 1
   return counts
 
 
@@ -95,9 +103,20 @@ def sort_counts(counts):
 # writes the frequencies in csv format to that file
 def write_frequencies(frequencies, path):
   # TODO: open the file at path in write mode
+  f = open(path, "w")
   # then for every item in the list write a new line
   # the format of the .csv file is as follows:
   # rank,token,count,frequency
+  rank = 0
+  sum1 = 0
+  for i in frequencies:
+    sum1 += i[1]
+
+  for i in frequencies:
+    rank += 1
+    f.write(str(rank)+","+str(i[0])+","+str(i[1])+","+str(i[1]/sum1)+"\n")
+  
+  f.close()
   
   # The rank runs starts at 1, so the most frequent word
   # has rank 1; the second most frequent 2 etc. 
@@ -108,7 +127,10 @@ def write_frequencies(frequencies, path):
 
 # TODO: You can comment in the following lines to check
 # your work. When you're finished, it 
-#files = traverse_directory('corpus')
-#counts = compute_counts(files)
-#sorted_counts = sort_counts(counts)
-#write_frequencies(sorted_counts, 'frequencies.csv')
+files = traverse_directory('corpus')
+#print(files)
+counts = compute_counts(files)
+#print(counts)
+sorted_counts = sort_counts(counts)
+#print(sorted_counts)
+write_frequencies(sorted_counts, 'frequencies.csv')
