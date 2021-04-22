@@ -49,6 +49,14 @@ def traverse_directory(path):
 # reads its contents and tokenizes them. Returns
 # a list of normalized tokens.
 def tokenize_file(path):
+	f = open(path)
+	content = f.read()
+	split_content = content.split()
+	lowercase_content = [token.lower() for token in split_content]
+	normalized_tokens = [token.strip(" ,.!?[]()=-...") for token in lowercase_content]
+	for token in normalized_tokens:
+		if token == "":
+			normalized_tokens.remove(token)
   # TODO: open and read file contents into the string tokens
   # TODO: then tokenize and normalize the string:
   #  1. split on whitespace
@@ -57,24 +65,26 @@ def tokenize_file(path):
   #  4. strip (that is, remove at beginning and end) 
   # special characters such as , . ! ? [ ] ( ) = - ...
   #  5. check that there are no empty strings in the list
-  tokens = ""
-  normalized_tokens = []
-
-  return normalized_tokens
+	return normalized_tokens
 
 # this function takes a list of paths, and for every
 # file it calls tokenize_file. Then it populates a 
 # dictionary that for every token lists how many
 # times it occurs in the entire corpus, so { word : count }
 def compute_counts(pathlist):
-  counts = {}
-  for path in pathlist:
-    tokens = tokenize_file(path)
-    # TODO: populate the counts dictionary
-    # Check if a token is already in it. If so, add
-    # 1 to its count; if not, create a new entry by using
-    # counts[word] = 1
-  return counts
+	counts = {}
+	for path in pathlist:
+		tokens = tokenize_file(path)
+		for token in tokens:
+			if token in counts:
+				counts[token] = counts[token] +1
+			else:
+				counts[token] = 1
+		# TODO: populate the counts dictionary
+		# Check if a token is already in it. If so, add
+		# 1 to its count; if not, create a new entry by using
+		# counts[word] = 1
+	return counts
 
 
 # Dictionaries are great, but they have no order. 
@@ -94,6 +104,16 @@ def sort_counts(counts):
 # sort_counts(), opens a new file handle and
 # writes the frequencies in csv format to that file
 def write_frequencies(frequencies, path):
+	rank = 1
+	sum_counts = 0
+	for entry in frequencies:
+		sum_counts = sum_counts + entry[1]
+
+	f = open(path, 'w')
+	for entry in frequencies:
+		f.write(str(rank) + "," + entry[0] + ","  + str(entry[1]) + "," + str(entry[1]/sum_counts) + "\n")
+		rank = rank + 1
+	f.close()
   # TODO: open the file at path in write mode
   # then for every item in the list write a new line
   # the format of the .csv file is as follows:
@@ -104,7 +124,6 @@ def write_frequencies(frequencies, path):
   # the frequency is calculated by dividing the count by the
   # sum of all counts. sum([list of numbers]) could be
   # handy in this case.
-  return
 
 # TODO: You can comment in the following lines to check
 # your work. When you're finished, it 

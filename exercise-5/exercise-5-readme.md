@@ -96,4 +96,4 @@ When working with replit, it can make things easier if you change the working di
 
 🕰 Submit your exercise at least 15' before the next session starts. 
 
-The `corups` directory contains the collected works of Shakespeare (as provided by the [Folger Shakespeare](https://shakespeare.folger.edu/cite/)). It contains several `.txt` files, each of which contains an entire play (and one which includes all his sonnets). Your goal is to fill in the party maked with `TODO` in `exercise-5/frequencies.py` to produce a `frequencies.csv` that contains the frequency of every token in the corpus. 
+The `corpus` directory contains the collected works of Shakespeare (as provided by the [Folger Shakespeare](https://shakespeare.folger.edu/cite/)). It contains several `.txt` files, each of which contains an entire play (and one which includes all his sonnets). Your goal is to fill in the party maked with `TODO` in `exercise-5/frequencies.py` to produce a `frequencies.csv` that contains the frequency of every token in the corpus. 
