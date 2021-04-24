@@ -11,7 +11,7 @@ import helper
 
 
 def write(input_string, output_path):
-  with open(output_path, "w") as f:
+  with open(output_path, "w", newline="") as f:
     # To write .csv and .tsv, you first open a
     # file, then you call csv.writer() and give
     # it the file as an argument as seen below.
