@@ -21,7 +21,7 @@ def test_write():
     test_file = f.readlines()
     test_line = test_file[1].split('\t')
     assert(test_line[0] == 'Stadt')
-    assert(test_line[1] == 'stadt')
+    assert(test_line[1].strip() == 'stadt')
 
   
 
