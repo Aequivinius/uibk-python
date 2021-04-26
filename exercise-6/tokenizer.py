@@ -6,14 +6,19 @@
 # much easier. 
 # TODO: Import them here, one on each line.
 
+import sys
+import helper 
+import csv
+
+
 def write(input_string, output_path):
-  with open(output_path, "w") as f:
+   with open(output_path, "w", newline="") as f:
     # To write .csv and .tsv, you first open a
     # file, then you call csv.writer() and give
     # it the file as an argument as seen below.
     # (It doesn't work if you haven't imported
     # the csv module above.)
-    writer = csv.writer(f)
+    
 
     # The csv.writer() method can either just take
     # one argument, the file it will write to, in
@@ -21,6 +26,7 @@ def write(input_string, output_path):
     # however, take a second argument, and look
     # as follows:
     # csv.writer(f, delimiter=",")
+    writer = csv.writer(f, delimiter='\t')
     # which will tell the csv module explicitly
     # that we want to use , as a symbol to separate
     # the individual fields.
@@ -36,7 +42,7 @@ def write(input_string, output_path):
     # will result in the following .csv file:
     # a,b
     # c,d
-    
+  
     # TODO: construct a list of lists in the
     # following form: 
     # [ [ token1, normalised_form1 ] ,
@@ -45,7 +51,8 @@ def write(input_string, output_path):
     # using the helper.tokenize() and 
     # helper.normalize() functions, then change
     # the below call to use your list of lists
-    tokens_and_normalizations = [ [] ]
+    tokens = helper.tokenize(input_string)
+    tokens_and_normalizations = [[token, helper.normalize(token)] for token in tokens]
     writer.writerows(tokens_and_normalizations)
 
 
@@ -69,9 +76,17 @@ def parse_arguments():
 
   # TODO: Change the line below, so that output_file
   # contains the third user-supplied argument
-  outputfile = ""
-  return input_string, output_file
+ # outputfile = ""
+  #return input_string, output_file
 
+  if sys.argv[1] == "-s":
+    input_string = sys.argv[2]
+  if sys.argv[1] == "-f":
+    with open(sys.argv[2], "r") as f:
+      input_string = f.read()
+
+  output_file = str(sys.argv[3])
+  return input_string, output_file
 
 if __name__ == "__main__":
   # Here you see how we deal with functions that
