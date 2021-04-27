@@ -65,7 +65,7 @@ def parse_arguments():
   # TODO: Complete the code below so that
   # input_string contains the string to be tokenized
   # either from file or from user arguments.
-  if sys.argv[1] ...
+  # if sys.argv[1] == ...
 
   # TODO: Change the line below, so that output_file
   # contains the third user-supplied argument
