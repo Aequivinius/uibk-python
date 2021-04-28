@@ -76,6 +76,8 @@ def parse_arguments():
   if sys.argv[1] == "-f":
     with open(sys.argv[2]) as f:
       input_string = f.read()
+      
+  # if sys.argv[1] == ...
 
   # TODO: Change the line below, so that output_file
   # contains the third user-supplied argument
