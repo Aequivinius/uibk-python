@@ -31,3 +31,4 @@ jobs:
         run: |
           cd exercise-6
           pytest 
+          flake8 --extend-ignore=E111 exercise-7/er.py
