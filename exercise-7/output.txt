@@ -57,7 +57,6 @@
 @@2514,986,Kitchener
 @@2514,990,Temple
 @@3514,17,Elizabeth
-@@3514,427,Police
 @@3514,492,Independence
 @@4514,123,Monsanto
 @@4514,143,Liberty
@@ -76,7 +75,6 @@
 @@4514,1427,Oaxaca
 @@4514,1623,Monsanto
 @@4514,1840,Federal
-@@4514,1927,Central
 @@4514,1945,Salvador
 @@4514,2004,Monsanto
 @@4514,2016,Beijing
@@ -101,7 +99,6 @@
 @@6514,356,Republic
 @@6514,387,Dublin
 @@6514,414,Dublin
-@@6514,415,Central
 @@6514,417,Dublin
 @@6514,420,Dublin
 @@6514,423,Dublin
@@ -186,8 +183,6 @@
 @@6514,1892,Tallaght
 @@7514,16,York
 @@7514,96,Man
-@@7514,97,Of
-@@7514,98,Central
 @@7514,100,David
 @@7514,310,Peekskill
 @@7514,313,York
@@ -248,7 +243,6 @@
 @@12514,2167,Arles
 @@12514,2194,Avignon
 @@12514,2338,Baghdad
-@@12514,2414,Of
 @@12514,2733,Most
 @@12514,2888,Chico
 @@12514,2892,Pereira
@@ -256,8 +250,6 @@
 @@12514,3420,Most
 @@12514,3486,Mannheim
 @@12514,3940,Asia
-@@12514,4064,Central
-@@12514,4156,Central
 @@12514,4260,Pontianak
 @@12514,4402,Pop
 @@12514,4632,Dalai
@@ -314,7 +306,6 @@
 @@17514,2572,Union
 @@17514,2587,Republic
 @@17514,2617,Most
-@@17514,2654,Police
 @@17514,2914,March
 @@17514,2951,Moscow
 @@17514,3062,Moscow
@@ -342,10 +333,8 @@
 @@17514,4302,Spring
 @@17514,4313,Most
 @@17514,4391,Union
-@@17514,4481,Of
 @@17514,4738,Washington
 @@17514,4740,Bern
-@@17514,5006,Central
 @@17514,5180,Roman
 @@17514,5274,Daugavpils
 @@17514,5278,Jelgava
@@ -366,7 +355,6 @@
 @@17514,6006,Summit
 @@17514,6011,Riga
 @@17514,6037,Union
-@@17514,6252,Police
 @@17514,6419,Union
 @@17514,6567,March
 @@17514,6642,Riga
@@ -387,7 +375,6 @@
 @@17514,7935,Union
 @@17514,7977,March
 @@17514,8057,Daugavpils
-@@17514,8384,Central
 @@17514,8551,Riga
 @@17514,8573,Riga
 @@17514,8579,Riga
@@ -475,7 +462,6 @@
 @@19514,4008,Burke
 @@19514,4022,Frederick
 @@19514,4311,Mary
-@@19514,4362,Central
 @@19514,4514,Murray
 @@19514,4604,Virginia
 @@19514,4888,Carney
@@ -492,7 +478,6 @@
 @@19514,5158,Spring
 @@19514,5213,Lebanon
 @@19514,5221,Jamaica
-@@21514,78,Of
 @@21514,1863,Anderson
 @@21514,2612,Houston
 @@21514,2897,Boston
@@ -527,14 +512,12 @@
 @@26514,448,Columbia
 @@26514,451,Columbia
 @@26514,509,Lawrence
-@@26514,592,Of
 @@26514,756,New York City
 @@26514,757,York
 @@26514,901,Same
 @@26514,905,Same
 @@26514,946,Centennial
 @@30514,8,London
-@@30514,165,Central
 @@30514,166,London
 @@30514,349,Wakefield
 @@30514,384,London
@@ -706,7 +689,6 @@
 @@35514,336,London
 @@35514,477,Federal
 @@35514,478,Republic
-@@35514,480,Central
 @@35514,552,Mexico
 @@35514,560,Date
 @@35514,655,Carolina
@@ -973,7 +955,6 @@
 @@49514,92,Nancy
 @@49514,108,Beauvais
 @@49514,192,Paris
-@@49514,311,Central
 @@49514,313,Nancy
 @@49514,384,Rennes
 @@49514,403,Poitiers
@@ -1248,8 +1229,6 @@
 @@63514,2322,Campinas
 @@63514,2364,Campinas
 @@63514,2394,Martin
-@@63514,2522,Central
-@@63514,2539,Central
 @@63514,2577,Campinas
 @@63514,2590,Castelo
 @@63514,2614,Campinas
@@ -1355,7 +1334,6 @@
 @@66514,35,Temple
 @@66514,38,Jerusalem
 @@66514,74,Temple
-@@66514,103,Police
 @@66514,107,Temple
 @@66514,116,Temple
 @@66514,131,Temple
@@ -1380,7 +1358,6 @@
 @@67514,506,Lund
 @@67514,535,Darmstadt
 @@67514,843,Dubna
-@@78514,288,Of
 @@78514,317,Philadelphia
 @@89514,2,New London
 @@89514,3,London
@@ -1493,7 +1470,6 @@
 @@89514,1196,York
 @@89514,1208,New London
 @@89514,1209,London
-@@89514,1219,Of
 @@89514,1240,New London
 @@89514,1241,London
 @@89514,1266,Ledyard
@@ -1557,7 +1533,6 @@
 @@89514,2516,New Haven
 @@89514,2526,Providence
 @@89514,2528,Worcester
-@@89514,2534,Central
 @@89514,2547,New London
 @@89514,2548,London
 @@89514,2564,New London
@@ -1572,7 +1547,6 @@
 @@89514,2788,London
 @@89514,2813,New London
 @@89514,2814,London
-@@89514,2815,Police
 @@89514,2903,Kelo
 @@89514,2905,New London
 @@89514,2906,London
@@ -1655,7 +1629,6 @@
 @@93514,43,Buffalo
 @@94514,262,White River
 @@94514,339,Forest
-@@94514,734,Of
 @@94514,860,Hollister
 @@94514,942,Hollister
 @@94514,1028,Roman
@@ -1725,7 +1698,6 @@
 @@95514,1143,Warren
 @@95514,1151,Greenwood
 @@95514,1157,Warren
-@@95514,1158,Central
 @@95514,1160,Warren
 @@95514,1164,Warren
 @@95514,1169,Green
@@ -1782,7 +1754,6 @@
 @@98514,4192,Green
 @@98514,4348,Green
 @@98514,4363,Rogers
-@@98514,4393,Police
 @@98514,4407,Washington
 @@98514,4419,Portsmouth
 @@98514,4422,Green
