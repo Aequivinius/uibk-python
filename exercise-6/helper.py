@@ -3,4 +3,4 @@ def tokenize(input):
   return input.split()
 
 def normalize(input):
-  return input.strip().strip(".,!").lower()
+  return input.strip().strip(".,!?").lower()
