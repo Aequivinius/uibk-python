@@ -68,6 +68,7 @@ def parse_arguments():
   # TODO: Complete the code below so that
   # input_string contains the string to be tokenized
   # either from file or from user arguments.
+
   if sys.argv[1] == "-s":
     input_string = sys.argv[2]
   elif sys.argv[1] == "-f":
