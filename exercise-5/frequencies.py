@@ -44,7 +44,6 @@ def sort_counts(counts):
 
 def write_frequencies(list, path):
   rank = 0
-  sum = 0
   sum = 0 #NOSONAR
   all_data = ""
 
