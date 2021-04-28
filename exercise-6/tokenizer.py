@@ -49,7 +49,7 @@ def write(input_string, output_path):
     # using the helper.tokenize() and 
     # helper.normalize() functions, then change
     # the below call to use your list of lists
-    tokens_and_normalizations = [ [token, helper.normalize(token)] for token in helper.tokenize(input_string) ]
+    tokens_and_normalizations = [ [ token, helper.normalize(token) ] for token in helper.tokenize(input_string) ]
     writer.writerows(tokens_and_normalizations)
 
 
@@ -74,7 +74,7 @@ def parse_arguments():
     with open(sys.argv[2], "r") as f:
       input_string = f.read()
   if sys.argv[1] == "-s":
-	    input_string = sys.argv[2]
+	  input_string = sys.argv[2]
 
   # TODO: Change the line below, so that output_file
   # contains the third user-supplied argument
