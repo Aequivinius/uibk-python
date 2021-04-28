@@ -33,6 +33,6 @@
 # if uno == duo:
 # print("equal")
 
-import sys
-import .exercise-6.helper
-import csv
+# import sys
+# import .exercise-6.helper
+# import csv
