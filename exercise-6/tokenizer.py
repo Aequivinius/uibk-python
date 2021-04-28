@@ -24,6 +24,23 @@ def write(input_string, output_path):
 
 
 def parse_arguments():
+  # this function returns two values - yes,
+  # python can do that! It checks the arguments
+  # from the user: if the first user-supplied
+  # argument (remember, that will be sys.argv[1])
+  # is -s, it will use the second argument as a
+  # string to be tokenized, if it is -f, it will
+  # take it as a file path. It reads the contents
+  # of the file, and uses those contents as string
+  # to be tokenized.
+
+  input_string = ""
+  
+  # TODO: Complete the code below so that
+  # input_string contains the string to be tokenized
+  # either from file or from user arguments.
+  # if sys.argv[1] == ...
+  
   if sys.argv[1] == "-s":
     input_string = sys.argv[2]
     
