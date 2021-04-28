@@ -11,7 +11,7 @@ import helper
 import csv
 
 def write(input_string, output_path):
-  with open(output_path, "w") as f:
+  with open(output_path, "w", newline="") as f:
     # To write .csv and .tsv, you first open a
     # file, then you call csv.writer() and give
     # it the file as an argument as seen below.
@@ -49,7 +49,9 @@ def write(input_string, output_path):
     # using the helper.tokenize() and 
     # helper.normalize() functions, then change
     # the below call to use your list of lists
-    tokens_and_normalizations = [[token, helper.normalize(token)] for token in helper.tokenize(input_string)]
+    tokens = helper.tokenize(input_string)
+
+    tokens_and_normalizations = [[token, helper.normalize(token)] for token in tokens]
     writer.writerows(tokens_and_normalizations)
 
 
