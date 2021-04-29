@@ -131,4 +131,4 @@ def write_frequencies(frequencies, path):
 # files = traverse_directory('corpus')
 # counts = compute_counts(files)
 # sorted_counts = sort_counts(counts)
-# write_frequencies(sorted_counts, 'frequencies.csv')
+# write_frequencies(sorted_counts, 'frequencies.csv') 

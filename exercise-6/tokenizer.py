@@ -6,14 +6,19 @@
 # much easier. 
 # TODO: Import them here, one on each line.
 
+import sys
+import helper
+import csv
+
 def write(input_string, output_path):
-  with open(output_path, "w") as f:
+  with open(output_path, "w", newline="") as f:
     # To write .csv and .tsv, you first open a
     # file, then you call csv.writer() and give
     # it the file as an argument as seen below.
     # (It doesn't work if you haven't imported
     # the csv module above.)
-    writer = csv.writer(f)
+    # writer = csv.writer(f)
+    writer = csv.writer(f, delimiter="\t")
 
     # The csv.writer() method can either just take
     # one argument, the file it will write to, in
@@ -42,10 +47,13 @@ def write(input_string, output_path):
     # [ [ token1, normalised_form1 ] ,
     #   [ token2, normalised_form2 ] ,
     #  ... ]
+  
     # using the helper.tokenize() and 
     # helper.normalize() functions, then change
-    # the below call to use your list of lists
-    tokens_and_normalizations = [ [] ]
+    # the below call to use your list of lists   
+    tokens = helper.tokenize(input_string)
+
+    tokens_and_normalizations = [[token, helper.normalize(token)] for token in tokens]
     writer.writerows(tokens_and_normalizations)
 
 
@@ -65,11 +73,15 @@ def parse_arguments():
   # TODO: Complete the code below so that
   # input_string contains the string to be tokenized
   # either from file or from user arguments.
-  # if sys.argv[1] == ...
+  if sys.argv[1] == "-s":
+    input_string = sys.argv[2]
+  if sys.argv[1] == "-f":
+    with open(sys.argv[2]) as f:
+      input_string = f.read()
 
   # TODO: Change the line below, so that output_file
   # contains the third user-supplied argument
-  outputfile = ""
+  output_file = sys.argv[3]
   return input_string, output_file
 
 
