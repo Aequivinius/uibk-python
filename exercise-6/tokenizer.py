@@ -74,11 +74,11 @@ def parse_arguments():
     with open(sys.argv[2], "r") as f:
       input_string = f.read()
   if sys.argv[1] == "-s":
-	  input_string = sys.argv[2]
+    input_string = sys.argv[2]
 
   # TODO: Change the line below, so that output_file
   # contains the third user-supplied argument
-  outputfile = sys.argv[3]
+  output_file = sys.argv[3]
   return input_string, output_file
 
 
