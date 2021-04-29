@@ -4,7 +4,9 @@
 # very basic helper functions, and finally the
 # csv module, which makes writing .csv and .tsv
 # much easier. 
-# TODO: Import them here, one on each line.
+import sys
+import helper
+import csv
 
 def write(input_string, output_path):
   with open(output_path, "w") as f:
@@ -13,7 +15,7 @@ def write(input_string, output_path):
     # it the file as an argument as seen below.
     # (It doesn't work if you haven't imported
     # the csv module above.)
-    writer = csv.writer(f)
+    writer = csv.writer(f, delimiter="\t")
 
     # The csv.writer() method can either just take
     # one argument, the file it will write to, in
@@ -44,8 +46,13 @@ def write(input_string, output_path):
     #  ... ]
     # using the helper.tokenize() and 
     # helper.normalize() functions, then change
+
     # the below call to use your list of lists
-    tokens_and_normalizations = [ [] ]
+    #input_string = input_string.replace("\n", " ")
+    tokens = helper.tokenize(input_string)
+    tokens_and_normalizations= []
+    for token in tokens:
+      tokens_and_normalizations.append([token, helper.normalize(token)])
     writer.writerows(tokens_and_normalizations)
 
 
@@ -60,8 +67,13 @@ def parse_arguments():
   # of the file, and uses those contents as string
   # to be tokenized.
 
-  input_string = ""
-  
+  if sys.argv[1] == "-s":
+    input_string = str(sys.argv[2])
+  elif sys.argv[1] == "-f":
+    with open(sys.argv[2], "r") as f:
+      input_string = f.read()
+        
+    
   # TODO: Complete the code below so that
   # input_string contains the string to be tokenized
   # either from file or from user arguments.
@@ -69,7 +81,7 @@ def parse_arguments():
 
   # TODO: Change the line below, so that output_file
   # contains the third user-supplied argument
-  outputfile = ""
+  output_file = str(sys.argv[3])
   return input_string, output_file
 
 
@@ -78,3 +90,4 @@ if __name__ == "__main__":
   # return two values:
   input_string, output_file = parse_arguments()
   write(input_string, output_file)
+  
