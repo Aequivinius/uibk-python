@@ -33,7 +33,7 @@ def find_cities(path, cities, output_filename):
                                 longest = hay_len
                                 match = longest_match
                                 # print("Found city: " + word)
-     
+
                         if match:
                             g.write(article_id
                                     + ","
