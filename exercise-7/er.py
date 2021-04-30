@@ -33,7 +33,7 @@ def find_cities(path, cities, output_filename):
                                 longest = hay_len
                                 match = longest_match
                                 # print("Found city: " + word)
-                                
+     
                         if match:
                             g.write(article_id
                                     + ","
@@ -75,9 +75,9 @@ def main(haystack, needles, output):
 
         Parameters
         ----------
-        haystack refers to name of file that will be searched through
-        needles refers to name of file that that contains content to be looked for
-        output refers to name of file where the search result will be gathered
+        haystack name of file that will be searched through
+        needles name of file that that contains content to be looked for
+        output name of file where the search result will be gathered
 
         Returns
         -------
