@@ -75,9 +75,9 @@ def main(haystack, needles, output):
 
         Parameters
         ----------
-        haystack name of file that will be searched through
-        needles name of file that that contains content to be looked for
-        output name of file where the search result will be gathered
+        haystack refers to name of file that will be searched through
+        needles refers to name of file that that contains content to be looked for
+        output refers to name of file where the search result will be gathered
 
         Returns
         -------
