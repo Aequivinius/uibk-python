@@ -1,4 +1,3 @@
-
 def find_cities(path, cities, output_file):
   with open(path) as f:
     texts = f.readlines()
