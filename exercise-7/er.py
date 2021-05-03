@@ -69,7 +69,9 @@ def make_city_dictionary(path):
 
 def main(haystack, needles, output):
   """
-    entity recogniser that loads city names from a file and finds occurrences (needles) of them in some free text (haystack)
+    entity recogniser that loads city names from a file
+    finds occurrences (needles) of them
+    in some free text (haystack)
 
     Parameters
     ---------
@@ -78,7 +80,7 @@ def main(haystack, needles, output):
     output = file where result is stored
     Returns
     -------
-    occurrences of city names 
+    occurrences of city names
   """
   cities = make_city_dictionary(needles)
   find_cities(haystack, cities, output)
