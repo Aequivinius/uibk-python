@@ -34,7 +34,7 @@ def find_cities(path, cities, output_filename):
                 
                   # print("Found city: " + word)
             if match:
-                   g.write(article id 
+                   g.write(article_id 
                             + "," 
                             + str(counter) 
                             + "," 
