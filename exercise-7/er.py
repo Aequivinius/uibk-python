@@ -1,75 +1,81 @@
 
-def find_cs(path, cs,out, ):
-  with open(path ) as f:
-    texts = f.readlines ( )
+def find_cities(text_path, cs, out_path):
+  with open(text_path) as f:
+    texts = f.readlines()
     print(len(texts))
+    # texts = texts[:50]
 
-  # texts = texts[:50]
-  with open (out,'w') as g:
-    for t in texts:
-      c = t.split()
-      if c :
-        artid =c[ 0 ]
-        c = [w for w in c \
-            if w[0] not in [ "@", "<" ] ]
-
+  with open(out_path, 'w') as f:
+    for line in texts:
+      c = line.split()
+      if c:
+        art_id = c[0]
+        c = [word for word in c if word[0] not in ["@", "<"]]
         counter = 0
+
         for word in c:
           if word in cs:
-                # find longest match
-                # print("word: " + word)
+            # find longest match
+            # print("word: " + word)
             hayst = cs[word]
-                    
             longest = 0
             match = ""
             for h in hayst:
               hlen = len(h)
               if hlen > longest:
                   tst = " ".join(c[counter:counter+len(h.split())])
-
               if h == tst:
-                  # print("tst: " + tst)
-                  longest = hlen
-                  match = tst
-                
-                  # print("Found city: " + word)
+                # print("tst: " + tst)
+                longest = hlen
+                match = tst
+                # print("Found city: " + word)
             if match:
-                   g.write(artid + "," + str(counter) + "," + match + "\n")
+              f.write(art_id + "," + str(counter) + "," + match + "\n")
           counter += 1
 
-  
 
-def ld(path):
+def get_cities(path):
+  cities = {}
+  with open(path) as f:
+    lines = [line.split("\t")[1] for line in f.readlines()]
 
-    cits = {}
-    with open(path) as f:
-      l = [l.split("\t")[1] for l in f.readlines() ]
-    for cit in l:
-        cs = cit.split()
-        if  cs[0] not in cits:
-          cits[cs[0]] = [ cit.strip() ]
-        else:
-          cits[cs[0]].append(cit.strip())
-    
-    for cit in list(cits)[:6]:
-        print(cit + " : " + ",".join(cits[cit]))
-    
-    # print(cits["University"])
+  for city in lines:
+    cs = city.split()
+    if cs[0] not in cities:
+      cities[cs[0]] = [city.strip()]
+    else:
+      cities[cs[0]].append(city.strip())
 
-    filters = ["University", "Police", "Of", "Central"]
-    for f in filters :
-        if f in cits:
-            cits[f] = [ c for c in cits[f] if c != f ]
+  for city in list(cities)[:6]:
+    print(city + " : " + ",".join(cities[city]))
 
-    # print(cits["University"])
+  filters = ["University", "Police", "Of", "Central"]
+  for filter_word in filters:
+    if filter_word in cities:
+      cities[filter_word] = [c for c in cities[filter_word]
+                             if c != filter_word]
 
-    # print(cits)
-    return cits
+# print(cities)
+  return cities
+
 
 def main(haystack, needles, output):
-  
-  cs = ld(needles)
-  find_cs(haystack, cs, output)
+  """Finds city names in a text file.
+
+  Parameters
+  ----------
+  haystack a txt-file that contains the text you want to analyze
+  needles points to a txt-file that contains the cities
+  output points to a txt-file for the output
+
+  Returns
+  -------
+  None
+  """
+
+  cities = get_cities(needles)
+  find_cities(haystack, cities, output)
+
 
 if __name__ == "__main__":
   main('text.txt', 'cities15000.txt', 'output.txt')
