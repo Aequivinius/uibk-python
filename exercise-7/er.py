@@ -56,9 +56,9 @@ def make_cities_dict(path):
     # print(cities["University"])
 
   filters = ["University", "Police", "Of", "Central"]
-  for f in filters:
-      if f in cities:
-          cities[f] = [c for c in cities[f] if c != f]
+  for filtee in filters:
+      if filtee in cities:
+          cities[filtee] = [city for city in cities[f] if city != filtee]
 
     # print(cities["University"])
 
