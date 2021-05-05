@@ -1,73 +1,85 @@
-def find_cs(path, cs, out, ):
+def find_cities(path, cities, output_file, ):
     with open(path) as f:
         texts = f.readlines()
         print(len(texts))
 
     # texts = texts[:50]
-    with open(out, 'w') as g:
-        for t in texts:
-            c = t.split()
-            if c:
-                artid = c[0]
-                c = [w for w in c if w[0] not in ["@", "<"]]
+    with open(output_file, 'w') as g:
+        for text in texts:
+            tokens = text.split()
+            if tokens:
+                article_id = tokens[0]
+                tokens = [token for token in tokens if token[0] not in ["@", "<"]]
 
                 counter = 0
-                for word in c:
-                    if word in cs:
+                for word in tokens:
+                    if word in cities:
                         # find longest match
                         print("word: " + word)
-                        hayst = cs[word]
+                        haystack = cities[word]
 
                         longest = 0
                         match = ""
-                        for h in hayst:
-                            hlen = len(h)
-                            if hlen > longest:
-                                tst = " ".join(c[counter:counter + len(h.split())])
+                        for hay in haystack:
+                            hay_len = len(hay)
+                            if hay_len > longest:
+                                longest_match = " ".join(tokens[counter:counter + len(hay.split())])
 
-                            if h == tst:
+                            if hay == longest_match:
                                 # print("tst: " + tst)
-                                longest = hlen
-                                match = tst
+                                longest = hay_len
+                                match = longest_match
 
                                 # print("Found city: " + word)
                         if match:
-                            g.write(artid + "," + str(counter) + "," + match + "\n")
+                            g.write(article_id + "," + str(counter) + "," + match + "\n")
                     counter += 1
 
 
-def ld(path):
-    cits = {}
+def create_dict_cities(path):
+    cities = {}
     with open(path) as f:
 
         line = [line.split("\t")[1] for line in f.readlines()]
-    for cit in line:
-        cs = cit.split()
-        if cs[0] not in cits:
-            cits[cs[0]] = [cit.strip()]
+    for city in line:
+        city_name = city.split()
+        if city_name[0] not in cities:
+            cities[city_name[0]] = [cities.strip()]
         else:
-            cits[cs[0]].append(cit.strip())
+            cities[city_name[0]].append(cities.strip())
 
-    for cit in list(cits)[:6]:
-        print(cit + " : " + ",".join(cits[cit]))
+    for city in list(cities)[:6]:
+        print(city + " : " + ",".join(cities[city]))
 
-    # print(cits["University"])
+    # print(cities["University"])
 
     filters = ["University", "Police", "Of", "Central"]
-    for f in filters:
-        if f in cits:
-            cits[f] = [c for c in cits[f] if c != f]
+    for filtr in filters:
+        if filtr in cities:
+            cities[filtr] = [city for city in cities[filtr] if city != filtr]
 
-    # print(cits["University"])
+    # print(cities["University"])
 
-    # print(cits)
-    return cits
+    # print(cities)
+    return cities
 
 
 def main(haystack, needles, output):
-    cs = ld(needles)
-    find_cs(haystack, cs, output)
+    cities = create_dict_cities(needles)
+    find_cities(haystack, cities, output)
+    """ 
+      Finds city names(needles) in a larger text(haystack) and returns the found names into a new file.
+        Parameters
+        ----------
+        haystack: examined file
+        needles: file containing the city names looked for
+        output: output file with stored city names
+        
+        Returns
+        -------
+        a file containing found city names
+    """
 
 
 if __name__ == "__main__":
-    """main('text.txt', 'cities15000.txt', 'output.txt')"""
+    main('text.txt', 'cities15000.txt', 'output.txt')
