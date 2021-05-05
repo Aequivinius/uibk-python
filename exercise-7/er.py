@@ -3,6 +3,7 @@ def find_cities(path, cities, output_file):
     texts = f.readlines()
     print(len(texts))
     # texts = texts[:50]
+  
   with open(output_file, 'w') as g:
     for text in texts:
       tokens = text.split()
@@ -44,9 +45,11 @@ def create_cities_dict(path):
           cities[city_names[0]] = [city.strip()]
         else:
           cities[city_names[0]].append(city.strip())
+    
     for city in list(cities)[:6]:
         print(city + " : " + ",".join(cities[city]))
     # print(cities["University"])
+    
     filters = ["University", "Police", "Of", "Central"]
     for filter in filters:
         if filter in cities:
@@ -54,6 +57,7 @@ def create_cities_dict(path):
     # print(cities["University"])
     # print(cities)
     return cities
+
 def main(haystack, needles, output):
   
   
