@@ -31,7 +31,10 @@ def find_cities(path, cities, output_file):
             if match:
               g.write(article_id + "," + str(counter) + "," + match + "\n")
           counter += 1
+
 def create_cities_dict(path):
+    
+    
     cities = {}
     with open(path) as f:
       line = [line.split("\t")[1] for line in f.readlines()]
@@ -52,6 +55,8 @@ def create_cities_dict(path):
     # print(cities)
     return cities
 def main(haystack, needles, output):
+  
+  
   """load city names from text file
     Parameters
     haystack: the file to be searched in
@@ -61,8 +66,11 @@ def main(haystack, needles, output):
     the file with the search result
   """
 
+  
   cities = create_cities_dict(needles)
   find_cities(haystack, cities, output)
 
 if __name__ == "__main__":
+
+
   main('text.txt', 'cities15000.txt', 'output.txt')
