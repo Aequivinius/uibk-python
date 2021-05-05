@@ -10,7 +10,7 @@ def find_cities(path, cities, output_filename):
       tokens = text.split()
       if tokens:
         article_id = tokens[0]
-        tokens = [token for token in tokens 
+        tokens = [token for token in tokens
                   if token[0] not in ["@", "<"]]
 
         counter = 0
@@ -18,13 +18,13 @@ def find_cities(path, cities, output_filename):
           if word in cities:
                 # find longest match
                 # print("word: " + word)
-            haystack = cities[word]
+              haystack = cities[word]
                     
-            longest = 0
-            match = ""
-            for hay in haystack:
-              hay_len = len(hay)
-              if hay_len > longest:
+              longest = 0
+              match = ""
+              for hay in haystack:
+                hay_len = len(hay)
+                if hay_len > longest:
                   longest_match = " ".join(tokens[counter:counter + len(hay.split())])
 
               if hay == longest_match:
@@ -33,18 +33,17 @@ def find_cities(path, cities, output_filename):
                   match = longest_match
                 
                   # print("Found city: " + word)
-            if match:
-                   g.write(article_id 
-                            + "," 
-                            + str(counter) 
-                            + "," 
-                            + match 
-                            + "\n")
-          counter += 1
+          if match:
+              g.write(article_id 
+                      + ","
+                      + str(counter)
+                      + ","
+                      + match
+                      + "\n")
+        counter += 1
 
 
-def citiy_dictonary(path):
-
+def city_dictonary(path):
     cities = {}
     with open(path) as f:
       line = [line.split("\t")[1] for line in f.readlines()]
@@ -56,23 +55,34 @@ def citiy_dictonary(path):
           cities[cities_split[0]].append(city.strip())
     
     for city in list(cities)[:6]:
-        print(cit + " : " + ",".join(cities[city]))
+        print(city + " : " + ",".join(cities[city]))
     
     # print(cits["University"])
 
     filters = ["University", "Police", "Of", "Central"]
     for word in filters:
         if word in cities:
-            cities[word] = [ city for city in cities[word] if city != word ]
+            cities[word] = [city for city in cities[word]
+                            if city != word]
 
     # print(cits["University"])
-
     # print(cits)
     return cities
 
 def main(haystack, needles, output):
-  
-  cities = citiy_dictonary(needles)
+   """ Locates words in a given text and returns its findings into a file.
+         Parameters
+         ----------
+         haystack: the file to be searched
+         needles: the file containing the words to be looked for
+         output: the file to contain the findings
+
+         Returns
+         -------
+         A file containing the search results
+     """
+
+  cities = city_dictonary(needles)
   find_cities(haystack, cities, output)
 
 if __name__ == "__main__":
