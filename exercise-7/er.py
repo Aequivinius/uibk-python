@@ -44,9 +44,9 @@ def create_dict_cities(path):
     for city in line:
         city_name = city.split()
         if city_name[0] not in cities:
-            cities[city_name[0]] = [cities.strip()]
+            cities[city_name[0]] = [city.strip()]
         else:
-            cities[city_name[0]].append(cities.strip())
+            cities[city_name[0]].append(city.strip())
 
     for city in list(cities)[:6]:
         print(city + " : " + ",".join(cities[city]))
