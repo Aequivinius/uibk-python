@@ -42,12 +42,13 @@ def create_city_dict(path):
     cities = {}
     with open(path) as f:
       line = [line.split("\t")[1] for line in f.readlines()]
+
     for city in line:
-        cities_split = cities.split()
+        cities_split = city.split()
         if cities_split[0] not in cities:
-          cities[cities_split[0]] = [cities.strip()]
+          cities[cities_split[0]] = [city.strip()]
         else:
-          cities[cities_split[0]].append(cities.strip())
+          cities[cities_split[0]].append(city.strip())
     
     for city in list(cities)[:6]:
         print(city + " : " + ",".join(cities[city]))
@@ -69,9 +70,11 @@ def main(haystack, needles, output):
   Finds specified word in texts.
   Results are printed in the output file.
 
-  :param haystack: file that will be searched through
-  :param needles: words which will be looked for in the haystack
-  :param output: file where search results are printed
+  Parameters
+
+  - haystack: file that will be searched through
+  - needles: words which will be looked for in the haystack
+  - output: file where search results are printed
   """
 
   cities = create_city_dict(needles)
