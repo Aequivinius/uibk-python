@@ -6,7 +6,7 @@ def find_cities(path, cities, output):
     # texts = texts[:50]
   with open(output, 'w') as g:
     for text in texts:
-      tokens = output.split()
+      tokens = text.split()
       if tokens:
         article_id = tokens[0]
         tokens = [token for token in tokens if token[0] not in ["@", "<"]]
