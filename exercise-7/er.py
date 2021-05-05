@@ -1,75 +1,84 @@
 
-def find_cs(path, cs,out, ):
-  with open(path ) as f:
-    texts = f.readlines ( )
+def find_cities(path, cities, output_file):
+  with open(path) as f:
+    texts = f.readlines()
     print(len(texts))
 
   # texts = texts[:50]
-  with open (out,'w') as g:
-    for t in texts:
-      c = t.split()
-      if c :
-        artid =c[ 0 ]
-        c = [w for w in c \
-            if w[0] not in [ "@", "<" ] ]
+  with open (output_file,'w') as g:
+    for text in texts:
+      tokens = text.split()
+      if tokens:
+        article_id = tokens[0]
+        tokens = [token for token in tokens
+                  if token[0] not in ["@", "<"]]
 
         counter = 0
-        for word in c:
-          if word in cs:
-                # find longest match
-                # print("word: " + word)
-            hayst = cs[word]
-                    
+        for word in tokens:
+          if word in cities:
+            # find longest match
+            # print("word: " + word)
+            haystack = cities[word] 
             longest = 0
             match = ""
-            for h in hayst:
-              hlen = len(h)
-              if hlen > longest:
-                  tst = " ".join(c[counter:counter+len(h.split())])
+        for hay in haystack:
+          hay_lenght = len(hay)
+          if hay_lenght > longest:
+            longest_match = " ".join(tokens[counter:counter+len(hay.split())])
 
-              if h == tst:
-                  # print("tst: " + tst)
-                  longest = hlen
-                  match = tst
-                
-                  # print("Found city: " + word)
-            if match:
-                   g.write(artid + "," + str(counter) + "," + match + "\n")
-          counter += 1
+          if hay == longest_match:
+            # print("tst: " + tst)
+              longest = hay_lenght
+              match = longest_match 
+            # print("Found city: " + word)
+          if match:
+            g.write(article_id + "," + str(counter) + "," + match + "\n")
+        counter += 1
 
   
 
-def ld(path):
+def create_cities_dict(path):
 
-    cits = {}
-    with open(path) as f:
-      l = [l.split("\t")[1] for l in f.readlines() ]
-    for cit in l:
-        cs = cit.split()
-        if  cs[0] not in cits:
-          cits[cs[0]] = [ cit.strip() ]
-        else:
-          cits[cs[0]].append(cit.strip())
+  cities = {}
+  with open(path) as f:
+    line = [line.split("\t")[1] for line in f.readlines()]
+  for citie in line:
+    citie_names = citie.split()
+    if  citie_names[0] not in cities:
+      cities[citie_names[0]] = [citie.strip()]
+    else:
+      cities[citie_names[0]].append(citie.strip())
     
-    for cit in list(cits)[:6]:
-        print(cit + " : " + ",".join(cits[cit]))
+  for citie in list(cities)[:6]:
+    print(citie + " : " + ",".join(cities[citie]))
     
-    # print(cits["University"])
+  # print(cities["University"])
 
-    filters = ["University", "Police", "Of", "Central"]
-    for f in filters :
-        if f in cits:
-            cits[f] = [ c for c in cits[f] if c != f ]
+  filters = ["University", "Police", "Of", "Central"]
+  for filter in filters:
+    if filter in cities:
+      cities[filter] = [citie for citie in cities[f] if citie != filter]
 
-    # print(cits["University"])
+  # print(cities["University"])
 
-    # print(cits)
-    return cits
+  # print(cities)
+  return cities
 
 def main(haystack, needles, output):
+  """ locates words in a given text ans returns its findings into a file.
+  parameters
+  ----------
+  haystack: the file to be searched
+  needles: the file containing the words to be looked for
+  output: the file to contain the findings
+
+  returns
+  ----------
+  a file containing the search results
+  """
   
-  cs = ld(needles)
-  find_cs(haystack, cs, output)
+  cities = create_cities_dict(needles)
+  find_cities(haystack, cities, output)
 
 if __name__ == "__main__":
   main('text.txt', 'cities15000.txt', 'output.txt')
