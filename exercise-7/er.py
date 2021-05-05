@@ -3,7 +3,7 @@ def find_cities(path, cities, output_file):
     texts = f.readlines()
     print(len(texts))
     # texts = texts[:50]
-  
+
   with open(output_file, 'w') as g:
     for text in texts:
       tokens = text.split()
@@ -33,9 +33,9 @@ def find_cities(path, cities, output_file):
               g.write(article_id + "," + str(counter) + "," + match + "\n")
           counter += 1
 
+
 def create_cities_dict(path):
-    
-    
+
     cities = {}
     with open(path) as f:
       line = [line.split("\t")[1] for line in f.readlines()]
@@ -45,11 +45,11 @@ def create_cities_dict(path):
           cities[city_names[0]] = [city.strip()]
         else:
           cities[city_names[0]].append(city.strip())
-    
+
     for city in list(cities)[:6]:
-        print(city + " : " + ",".join(cities[city]))
+      print(city + " : " + ",".join(cities[city]))
     # print(cities["University"])
-    
+
     filters = ["University", "Police", "Of", "Central"]
     for filter in filters:
         if filter in cities:
@@ -58,9 +58,9 @@ def create_cities_dict(path):
     # print(cities)
     return cities
 
+
 def main(haystack, needles, output):
-  
-  
+
   """load city names from text file
     Parameters
     haystack: the file to be searched in
@@ -70,11 +70,9 @@ def main(haystack, needles, output):
     the file with the search result
   """
 
-  
   cities = create_cities_dict(needles)
   find_cities(haystack, cities, output)
 
+
 if __name__ == "__main__":
-
-
   main('text.txt', 'cities15000.txt', 'output.txt')
