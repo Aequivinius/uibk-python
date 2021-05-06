@@ -15,8 +15,8 @@ There will be 13 exercises, which can be found on  [the course repository on git
 * exercise-7 Good practises (PEP8)
 * exercise-8 virtual environments:`pip` and `poetry`
 
-* exercise-9 `jupyter` / visualisation with `bokeh`
-* exercise-10 `pandas`, `regex`, encoding?
+* exercise-9 `pandas`, `regex`, encoding?
+* exercise-10 `jupyter` / visualisation with `bokeh`
 
 * exercise-11 NLP project I: normalisation, `nltk`
 * exercise-12 NLP project II: word frequencies, palindromes 2?, `spaCy`
