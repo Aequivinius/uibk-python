@@ -70,20 +70,19 @@ def city_dictonary(path):
     return cities
 
 def main(haystack, needles, output):
-   """ Locates words in a given text and returns its findings into a file.
-         Parameters
-         ----------
-         haystack: the file to be searched
-         needles: the file containing the words to be looked for
-         output: the file to contain the findings
-
-         Returns
-         -------
-         A file containing the search results
-     """
-
-  cities = city_dictonary(needles)
-  find_cities(haystack, cities, output)
+    """ Finds specific words (needles) in large texts (haystack).
+        Then returns the resulting occurrences in a new file (output).
+        Parameters
+        ----------
+        haystack name of file that will be searched through
+        needles name of file that that contains content to be looked for
+        output name of file where the search result will be gathered
+        Returns
+        -------
+        A new file that contains the search results
+    """
+    cities = city_dictonary(needles)
+    find_cities(haystack, cities, output)
 
 if __name__ == "__main__":
-  main('text.txt', 'cities15000.txt', 'output.txt')
+    main('text.txt', 'cities15000.txt', 'output.txt')
