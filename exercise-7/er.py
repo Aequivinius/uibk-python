@@ -47,7 +47,7 @@ def create_city_list(path):
       cities[city[0]] = [city_name.strip()]
     else:
       cities[city[0]].append(city_name.strip())
-    
+
     for city in list(cities)[:6]:
       print(city + " : " + ",".join(cities[city]))
 
