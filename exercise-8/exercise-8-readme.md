@@ -1,4 +1,4 @@
-# exercise-8 `pip` and `venv`
+# exercise-8 `pip` and `poetry`
 
 ## Review exercise-7
 
