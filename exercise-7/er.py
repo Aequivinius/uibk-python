@@ -65,8 +65,6 @@ def create_dict_cities(path):
 
 
 def main(haystack, needles, output):
-    cities = create_dict_cities(needles)
-    find_cities(haystack, cities, output)
     """ 
       Finds city names(needles) in a larger text(haystack) and returns the found names into a new file.
         Parameters
@@ -79,6 +77,9 @@ def main(haystack, needles, output):
         -------
         a file containing found city names
     """
+    cities = create_dict_cities(needles)
+    find_cities(haystack, cities, output)
+    
 
 
 if __name__ == "__main__":
