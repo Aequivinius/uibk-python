@@ -13,7 +13,8 @@ def find_cities(path, cs, output):
         tokens = [token for token in tokens
             if token[0] not in ["@", "<"]]
         counter = 0
-
+        cities = []
+                
         for word in tokens:
           if word in cities:
                 # find longest match
