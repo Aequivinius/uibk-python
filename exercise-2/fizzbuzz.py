@@ -3,16 +3,26 @@
 # argument is divisible by 3, "buzz" if it is divisible by 5, and "fizzbuzz"
 # if it is divisible by 3 and 5. You can use the predefined
 # computer_remainder() function.
-
 def compute_remainder(number, divisor):
 	return number % divisor
+fb = "fizzbuzz"
+b = "buzz"
+f = "fizz"
 
 def fizzbuzz(number):
 	# your code goes here
 	# don't forget to replace the return statement below as appropriate
-	return number
+
+  if number % 3 == 0 and number % 5 == 0:
+    return (fb)
+  elif number % 5 == 0:
+    return (b)
+  elif number % 3 == 0:
+    return (f)
+
+  return number
 
 # this part below prints the result of the fizzbuzz function for the first 45
 # numbers
-for number in range(0,46):
+for number in range(1,46):
 	print(str(number) + " : " + str(fizzbuzz(number)))

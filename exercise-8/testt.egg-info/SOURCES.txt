@@ -1,0 +1,7 @@
+setup.py
+testt.py
+testt.egg-info/PKG-INFO
+testt.egg-info/SOURCES.txt
+testt.egg-info/dependency_links.txt
+testt.egg-info/requires.txt
+testt.egg-info/top_level.txt
