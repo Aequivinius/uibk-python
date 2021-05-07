@@ -1,4 +1,4 @@
-def find_cities(path, cs, output):
+def find_cities(path, cities, output):
   with open(path) as f:
     texts = f.readlines()
     print(len(texts))
@@ -13,7 +13,6 @@ def find_cities(path, cs, output):
         tokens = [token for token in tokens
             if token[0] not in ["@", "<"]]
         counter = 0
-        cities = []
                 
         for word in tokens:
           if word in cities:
