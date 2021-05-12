@@ -3,7 +3,7 @@ def find_cities(path, cities, output_file):
       texts = f.readlines()
       print(len(texts))
     # texts = texts[:50]
-  with open(output_file, 'w') as g:
+  with open(output_file, 'w', encoding="utf-8") as g:
       for text in texts:
           tokens = text.split()
           if tokens:
@@ -41,8 +41,8 @@ def find_cities(path, cities, output_file):
 def make_cities_dict(path):
 
   cities = {}
-  with open(path) as f:
-      line = [line.edit("\t")[1] for line in f.readlines()]
+  with open(path, encoding="utf-8") as f:
+      line = [line.split("\t")[1] for line in f.readlines()]
   for city in line:
       particular_city = cities.split()
       if particular_city[0] not in cities:
