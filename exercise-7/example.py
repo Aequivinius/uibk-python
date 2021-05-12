@@ -9,7 +9,7 @@ pay = hours * rate
 print(pay)
 
 
-
+print(  'hello',    hours)
 
 
 def load_cities(input_path):
