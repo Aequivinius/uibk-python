@@ -12,21 +12,19 @@ There will be 13 exercises, which can be found on  [the course repository on git
 * exercise-4 `dict`
 * exercise-5 `comprehension`s, reading and writing files, `.csv`
 * exercise-6 `import` and arguments
-* exercise-7 Good practises (pep8, good documentation, good coding, linting, `regex`)
-* exercise-8 pandas and  virtual environments: `venv`, `pip` and `poetry`
+* exercise-7 Good practises (PEP8)
+* exercise-8 virtual environments:`pip` and `poetry`
 
-* exercise-9 jupyter?
-* exercise-10 visualisation
+* exercise-9 `jupyter` 
+* exercise-10 `pandas`, visualisation with `bokeh`
 
 * exercise-11 NLP project I: normalisation, `nltk`
 * exercise-12 NLP project II: word frequencies, palindromes 2?, `spaCy`
-* exercise-13 NLP project III: miniature project
+* exercise-13 NLP project III: miniature project (web scraping?)
 
 ## How to use `git` for this course
 
 To get the new exercise, you have to create a `pull request` from the course repository into you own repository. Then, `pull` the new files into your repl.
-
-// TODO make screenshots of this
 
 I recommend that the students use the web interface of github.com and replit.com to manage their `commit`s, so that they don't have to deal too much with the intricacies of `git` and can focus on the programming. 
 
