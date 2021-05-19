@@ -8,19 +8,22 @@ f = "fizz"
 b = "buzz"
 fb = "fizzbuzz"
 
+
 def compute_remainder(number, divisor):
-	return number % divisor
+    return number % divisor
+
 
 def fizzbuzz(number):
-  if compute_remainder(number, 5*3) == 0:
-    return fb
-  if compute_remainder(number, 3) == 0:
-    return f
-  if compute_remainder(number, 5) == 0:
-    return b
-  return number
+    if compute_remainder(number, 5 * 3) == 0:
+        return fb
+    if compute_remainder(number, 3) == 0:
+        return f
+    if compute_remainder(number, 5) == 0:
+        return b
+    return number
+
 
 # this part below prints the result of the fizzbuzz function for the first 45
 # numbers
-for number in range(1,46):
-	print(str(number) + " : " + str(fizzbuzz(number)))
+for number in range(1, 46):
+    print(str(number) + " : " + str(fizzbuzz(number)))

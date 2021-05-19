@@ -49,10 +49,13 @@ print("-----------")
 # interpreter considers function declaration complete. Notice how the "Let's
 # look at functions"-print statement is not part of the function.
 
+
 def function_name():
-	print(a)
-	print(bucket)
-	print("function_name() finishes")
+    print(a)
+    print(bucket)
+    print("function_name() finishes")
+
+
 print("Let's look at functions:")
 
 # Just declaring the function saves the sequence of statements for us to call
@@ -67,9 +70,12 @@ print("-----------")
 # access to variables:
 
 print("Let's look at parameters:")
+
+
 def function_with_parameters(parameter, another_parameter):
-	print(parameter)
-	print(another_parameter)
+    print(parameter)
+    print(another_parameter)
+
 
 # If you then call the parametrised function, you can give it values that the
 # statements it contains can use under the name you gave the parameters when
@@ -91,11 +97,14 @@ print("-----------")
 # statement available where the function is called.
 
 print("Let's look at return values:")
-def function_with_return_value(parameter, another_parameter):
-	return parameter + another_parameter
 
-result = function_with_return_value(11,13)
-print(function_with_return_value(3,4))
+
+def function_with_return_value(parameter, another_parameter):
+    return parameter + another_parameter
+
+
+result = function_with_return_value(11, 13)
+print(function_with_return_value(3, 4))
 print(result)
 
 # Finally, the IF statement allows you to structure the code with conditions.
@@ -105,10 +114,8 @@ print(result)
 
 test_value = 29
 if test_value > 31:
-	print("It's not brobdingnagian")
+    print("It's not brobdingnagian")
 if test_value < 31:
-	print("It's elephantine")
+    print("It's elephantine")
 if test_value == 29:
-	print("It's gargantuan")
-
-
+    print("It's gargantuan")
