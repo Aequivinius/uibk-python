@@ -1,0 +1,16 @@
+[[package]]
+category = "main"
+description = "Useful library package stuff."
+name = "library"
+optional = false
+python-versions = "*"
+version = "0.0.0"
+
+[metadata]
+content-hash = "8eba00571a1e9faa5ffe565d3760233a2d9c4279b9bd0097ce041f2bf9ca9eca"
+python-versions = "^3.8"
+
+[metadata.files]
+library = [
+    {file = "Library-0.0.0.tar.gz", hash = "sha256:f1b5c50d6e4baeb45c251ca83991c1880d44769621bc94078535513435c9b917"},
+]
