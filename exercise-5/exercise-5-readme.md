@@ -72,6 +72,8 @@ with open('demo.txt', 'w') as f:
     f.write(key.capitalize() + " was " + value.capitalize() + "\n")
 ```
 
+⚠️ If you are on Windows, it's best to use `open(path, 'w', encoding="uft-8")`.
+
 ## `.csv`
 
 * stands for *comma separated value*, and is a very common, easy to use format to store tabular data. Each line represents a row in the table, and the columns are separated by `,`. For example:
