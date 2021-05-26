@@ -8,9 +8,9 @@ def traverse_directory(path):
 def tokenize_file(path): #untested
   with open(path, "r") as f:
     complete_string = f.read()
-  tokens = []
-  normalized_tokens = []
-  tokens = complete_string.split()
+    tokens = []
+    normalized_tokens = []
+    tokens = complete_string.split()
 
   for token in tokens:
     normalized_tokens.append(token.lower().strip(",;.!?[]()=-"))
@@ -67,7 +67,8 @@ def write_frequencies(list, path):
 
 
 
-files = traverse_directory('corpus')
-counts = compute_counts(files)
-sorted_counts = sort_counts(counts)
-write_frequencies(sorted_counts, 'frequencies.csv')
+if __name__ == "__main__":
+  files = traverse_directory('corpus')
+  counts = compute_counts(files)
+  sorted_counts = sort_counts(counts)
+  write_frequencies(sorted_counts, 'frequencies.csv')
