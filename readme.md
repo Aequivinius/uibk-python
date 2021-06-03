@@ -16,7 +16,7 @@ There will be 13 exercises, which can be found on  [the course repository on git
 * exercise-8 virtual environments:`pip` and `poetry`
 
 * exercise-9 `jupyter` 
-* exercise-10 `pandas`, visualisation with `bokeh`
+* exercise-10 `matplotlib` for visualisation
 
 * exercise-11 NLP project I: normalisation, `nltk`
 * exercise-12 NLP project II: word frequencies, palindromes 2?, `spaCy`
