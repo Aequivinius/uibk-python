@@ -1,4 +1,21 @@
+
+
 # exercise-10 `matplotlib`
+
+## Reminder `jupyter`
+
+* You probably realised that github does a great job rendering your notebooks.
+* Don't use it to just replace comments or to structure your code, use it to tell a story! So in the first example below, the headers merely explain what happens in the code - remember, well-written code doesn't need a lot of explanation.
+
+![bad_example](bad_example.png)
+
+
+
+💡 In the example below, however, the notebook is used to offer some additional insight and **interpretation** of the data.
+
+![good_example](good_example.png)
+
+## What is `matplotlib`
 
 You learned how to process data with `jupyter` and create data-driven narratives using code and markdown. Today we're looking at how to add visualisations with [`matplotlib`](https://matplotlib.org/). It's a `python` library, but shares some syntax with MATLAB.
 
@@ -46,7 +63,7 @@ American linguist and statistician who in the 1930s discovered that the most fre
 
 ## exercise-10
 
-🕰 Submit your exercise at least 15' before the next session starts. 
+🕰 Submit your exercise at least 75' before the next session starts. 
 
 * In the `exercise-10/corpus` directory you find a sample of 1.6 million words containing spoken contemporary English from TV episodes ranging from 1950 to today, obtained from [Corpusdata](https://www.corpusdata.org/formats.asp).
 * Your goal is to create in `jupyter` a figure with two bar plots to compare the 100 most frequent words in contemporary spoken English using this exercise's corpus and the prosaic English of Shakespeare from exercise-5. The plots should show the 100 most frequent words on the x-axis, and on the y-axis their frequency, that is, every word's number of occurrences divided by the total number of tokens in each corpus to compute it's probability.
