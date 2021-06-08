@@ -1,4 +1,4 @@
-# exercise-8 `jupyter`
+# exercise-9 `jupyter`
 
 ## What is `jupyter`?
 
