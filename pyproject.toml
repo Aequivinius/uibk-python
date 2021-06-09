@@ -9,6 +9,8 @@ python = "^3.8"
 pytest = "^6.2.4"
 black = "^21.5b1"
 flake8 = "^3.9.2"
+jupyter = "^1.0.0"
+matplotlib = "^3.4.2"
 
 [tool.poetry.dev-dependencies]
 
