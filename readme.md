@@ -2,7 +2,7 @@
 
 Students are introduced to python, and the different techniques to process natural language texts automatically are explained. Experience in programming is desirable, but not necessary. Since the course is open to students without prior programming experience, sessions 2-4 are very general and not specific to natural language text processing.
 
-There will be 13 exercises, which can be found on  [the course repository on github.com](https://github.com/Aequivinius/uibk-python). The first session is dedicated to the explanation of `git` in general and how we are using it in the course: All the exercises are handed in via `pull requests` and will be tested automatically. If a submission passes the tests, it is considered a success; and for the maximum grade students need to submit 10 successful exercises. Since we are using `pytest` to automatically evaluate your submissions, avoid naming any of your files beginning with `test_` or ending with `_test`.
+There will be 12 exercises and 13 explanation sessions, which can be found on  [the course repository on github.com](https://github.com/Aequivinius/uibk-python). The first session is dedicated to the explanation of `git` in general and how we are using it in the course: All the exercises are handed in via `pull requests` and will be tested automatically. If a submission passes the tests, it is considered a success; and for the maximum grade students need to submit 10 successful exercises. Since we are using `pytest` to automatically evaluate your submissions, avoid naming any of your files beginning with `test_` or ending with `_test`.
 
 ## Table of Contents
 
@@ -18,9 +18,9 @@ There will be 13 exercises, which can be found on  [the course repository on git
 * exercise-9 `jupyter` 
 * exercise-10 `matplotlib` for visualisation
 
-* exercise-11 NLP project I: normalisation, `nltk`
-* exercise-12 NLP project II: word frequencies, palindromes 2?, `spaCy`
-* exercise-13 NLP project III: miniature project (web scraping?)
+* exercise-11 `nltk` and sentiment analysis
+* exercise-12 `spaCy` and dependency parsing
+* exercise-13 word embeddings
 
 ## How to use `git` for this course
 
