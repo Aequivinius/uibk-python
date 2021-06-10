@@ -6,7 +6,7 @@
    "metadata": {},
    "source": [
     "# Zipf's Law through the centuries\n",
-    "Let us find out how accurate Zipf's Law is for a corpus of Shakespeare's texts and one of contemporary (modern) English."
+    "Is Zipf right?."
    ]
   },
   {
@@ -14,7 +14,7 @@
    "id": "herbal-channels",
    "metadata": {},
    "source": [
-    "### Load and pre-process contemporary (modern) corpus"
+    "### Load and pre-process modern corpus"
    ]
   },
   {
@@ -52,7 +52,7 @@
    "id": "north-affect",
    "metadata": {},
    "source": [
-    "### Load and pre-process Shakespeare's corpus"
+    "### Load and pre-process Shakespeare's corpus of all his works"
    ]
   },
   {
@@ -94,7 +94,7 @@
    "id": "established-project",
    "metadata": {},
    "source": [
-    "### Create token-frequency lists"
+    "### List for the frequency of tokens"
    ]
   },
   {
@@ -150,7 +150,7 @@
    "id": "suited-helmet",
    "metadata": {},
    "source": [
-    "### Calculate probabilities/frequencies"
+    "### Calculate frequencies"
    ]
   },
   {
@@ -251,9 +251,7 @@
    "id": "capital-incidence",
    "metadata": {},
    "source": [
-    "### What would Zipf say?\n",
-    "According to Zipf, if you rank the words by frequency and multiply each rank with its frequency, you'd get a constant value. Here is a list of these values - we see that they are not constant but around 0.14-0.18 for the contemporary corups so it is not really a constant value. For Shakespeare's corpus, it is closer to a constant of about 0.14.\n",
-    "In both corpora, the first few entries differ most from the expected constant value."
+    "### "Zipf \n",
    ]
   },
   {
@@ -390,9 +388,9 @@
    "id": "destroyed-standard",
    "metadata": {},
    "source": [
-    "Below, we use Zipf's Law to see if the probabilities calculated above correspond to the probabilities by Zipf's Law.\n",
-    "This can be done by dividing a constant value by the rank of the word, to get the predicted (=Zipf's) probability of this word.\n",
-    "This is what can be seen on the graphs below. In the task description (as I understood it) we assume a constant value of 0.1."
+    "We use Zipf's Law to see if the probabilities calculated above correspond to the probabilities by Zipf's Law.\n",
+    "We divide the constant value by the rank of the word, to get the Zipf's probability of this word.\n",
+    "This is what can be seen down there."
    ]
   },
   {
@@ -460,7 +458,7 @@
    "id": "continuing-chorus",
    "metadata": {},
    "source": [
-    "Here, the y-scale is set to a logarithmic scale. This way, we can see the results a little better."
+    "Y is a logarithmic scale. This way, we can see the results a little better."
    ]
   },
   {
@@ -517,8 +515,7 @@
    "metadata": {},
    "source": [
     "### Result:\n",
-    "The corpus does not fully correspond to the curve predicted by Zipf's law, but it follows the general tendency that Zipf's law predicts. Shakespeare's corpus fits the curve slightly better than the contemporary corpus.\n",
-   "(If we'd change the constant value to approx. 0.14 however, the curve fits the bar plot quite well.)"
+    "The modern corpus is not perfect for Zipf's law, but it is kinda okay. The works of Shakespeare fit a little bit better to Zipf's prediction."
    ]
   }
  ],
