@@ -9,6 +9,7 @@ license = "CC-BY-NC-4.0"
 python = "^3.9"
 jupyter = "^1.0.0"
 matplotlib = "^3.4.2"
+nltk = "^3.6.2"
 
 [tool.poetry.dev-dependencies]
 
