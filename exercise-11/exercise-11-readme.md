@@ -75,7 +75,7 @@ This returns a dictionary with 4 values: `neg`, `neu`, `pos` and `compound`. The
 
 * Play around with the `twitter_sample` data set, and compute the frequency distribution over all tokens - filter out the stop words, and from the most common tokens, select 3 that you find interesting.
 * For these 3 tokens, create a new list of tweets that contain them (mimicking a very superficial topic modeling) - make sure the resulting lists contain more than 10 tweets to get more interesting results.
-* For the resulting lists, compute the average positive and negative sentiment score and plot them using `matplotlib` as a stacked bar plot. Stacked bar plots are just normal bar plots with an additional `bottom` argument: 
+* For the resulting lists, compute the average positive and negative sentiment score and plot them using `matplotlib` as a stacked bar plot. Bonus points if you normalise them! Stacked bar plots are just normal bar plots with an additional `bottom` argument: 
 
 ```python
 import matplotlib.pyplot as plt
