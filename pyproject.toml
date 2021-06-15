@@ -11,6 +11,8 @@ black = "^21.5b1"
 flake8 = "^3.9.2"
 jupyter = "^1.0.0"
 matplotlib = "^3.4.2"
+nltk = "^3.6.2"
+spacy = "^3.0.6"
 
 [tool.poetry.dev-dependencies]
 

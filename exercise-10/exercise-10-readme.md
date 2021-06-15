@@ -15,7 +15,7 @@
 
 ![good_example](good_example.png)
 
-## What is `matplotlib`
+## What is `matplotlib`?
 
 You learned how to process data with `jupyter` and create data-driven narratives using code and markdown. Today we're looking at how to add visualisations with [`matplotlib`](https://matplotlib.org/). It's a `python` library, but shares some syntax with MATLAB.
 
