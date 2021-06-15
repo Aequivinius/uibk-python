@@ -4,7 +4,7 @@
 
 ## Updated course schedule
 
-* There will be one exercise less, so there will be 12 total exercises instead of 13. If this poses a problem for you in regards to your grade, get in touch with me by e-mail.
+There will be one exercise less, so there will be 12 total exercises instead of 13. If this poses a problem for you in regards to your grade, get in touch with me by e-mail.
 
 ## Big NLP libraries
 
