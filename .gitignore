@@ -3,4 +3,5 @@
 __pycache__
 *.pyc
 *solution*
+exercise-12/corpus
 .pytest_cache
