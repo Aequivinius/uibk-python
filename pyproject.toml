@@ -6,11 +6,12 @@ authors = ["Nico Colic"]
 license = "CC-BY-NC-4.0"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.9,<3.10"
 jupyter = "^1.0.0"
 matplotlib = "^3.4.2"
 nltk = "^3.6.2"
 spacy = "^3.0.6"
+scipy = "^1.7.0"
 
 [tool.poetry.dev-dependencies]
 
