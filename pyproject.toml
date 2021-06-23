@@ -1,16 +1,14 @@
 [tool.poetry]
-name = "uibk-python"
-version = "0.9.0"
-description = "Introductory python programming course for linguists"
-authors = ["Nico Colic"]
-license = "CC-BY-NC-4.0"
+name = "exercise12"
+version = "0.1.0"
+description = ""
+authors = ["Alena Pardatscher"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 jupyter = "^1.0.0"
-matplotlib = "^3.4.2"
-nltk = "^3.6.2"
 spacy = "^3.0.6"
+matplotlib = "^3.4.2"
 
 [tool.poetry.dev-dependencies]
 
